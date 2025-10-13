@@ -5,7 +5,7 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator
 import org.slf4j.LoggerFactory
 
-object ALBOBDataGenerator : DataGeneratorEntrypoint {
+internal object ALBOBDataGenerator : DataGeneratorEntrypoint {
     private val logger = LoggerFactory.getLogger("${ALBOB.MOD_ID}-data")
 
 	override fun onInitializeDataGenerator(generator: FabricDataGenerator) {
@@ -14,5 +14,7 @@ object ALBOBDataGenerator : DataGeneratorEntrypoint {
         val pack = generator.createPack()
         pack.addProvider(::ModelProvider)
         pack.addProvider(::LanguageProvider)
+        pack.addProvider(::BlockLootTableProvider)
+        pack.addProvider(::BlockTagProvider)
 	}
 }

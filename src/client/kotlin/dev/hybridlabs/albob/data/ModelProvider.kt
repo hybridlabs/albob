@@ -7,7 +7,7 @@ import net.minecraft.data.client.BlockStateModelGenerator
 import net.minecraft.data.client.ItemModelGenerator
 import net.minecraft.data.family.BlockFamily
 
-class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
+internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(output) {
     override fun generateBlockStateModels(generator: BlockStateModelGenerator) {
         ALBOBlockFamilies.families
             .filter(BlockFamily::shouldGenerateModels)

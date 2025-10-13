@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "albob:exposed_brick_slab",
+    "albob:white_concrete_slab",
+    "albob:orange_concrete_slab",
+    "albob:magenta_concrete_slab",
+    "albob:light_blue_concrete_slab",
+    "albob:yellow_concrete_slab",
+    "albob:lime_concrete_slab",
+    "albob:pink_concrete_slab",
+    "albob:gray_concrete_slab",
+    "albob:light_gray_concrete_slab",
+    "albob:cyan_concrete_slab",
+    "albob:purple_concrete_slab",
+    "albob:blue_concrete_slab",
+    "albob:brown_concrete_slab",
+    "albob:green_concrete_slab",
+    "albob:red_concrete_slab",
+    "albob:black_concrete_slab"
+  ]
+}

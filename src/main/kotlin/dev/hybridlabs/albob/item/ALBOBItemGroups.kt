@@ -1,6 +1,7 @@
 package dev.hybridlabs.albob.item
 
 import dev.hybridlabs.albob.ALBOB
+import dev.hybridlabs.albob.ALBOB.filterAlbobMod
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup
 import net.minecraft.item.ItemGroup
 import net.minecraft.item.ItemStack
@@ -15,10 +16,7 @@ object ALBOBItemGroups {
             .displayName(Text.translatable("itemGroup.${ALBOB.MOD_ID}.blocks"))
             .icon { ItemStack(ALBOBItems.EXPOSED_BRICK) }
             .entries { _, entries ->
-                Registries.BLOCK.filter { block ->
-                    val identifier = Registries.BLOCK.getId(block)
-                    identifier.namespace == ALBOB.MOD_ID
-                }.forEach(entries::add)
+                Registries.BLOCK.filterAlbobMod().forEach(entries::add)
             }
             .build()
     )

@@ -5,7 +5,7 @@ import dev.hybridlabs.albob.block.ALBOBlocks
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 
-class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output) {
+internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvider(output) {
     override fun generateTranslations(builder: TranslationBuilder) {
         builder.add("itemGroup.${ALBOB.MOD_ID}.blocks", "ALBO: Blocks")
 
