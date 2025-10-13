@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "albob:exposed_brick_wall",
+    "albob:white_concrete_wall",
+    "albob:orange_concrete_wall",
+    "albob:magenta_concrete_wall",
+    "albob:light_blue_concrete_wall",
+    "albob:yellow_concrete_wall",
+    "albob:lime_concrete_wall",
+    "albob:pink_concrete_wall",
+    "albob:gray_concrete_wall",
+    "albob:light_gray_concrete_wall",
+    "albob:cyan_concrete_wall",
+    "albob:purple_concrete_wall",
+    "albob:blue_concrete_wall",
+    "albob:brown_concrete_wall",
+    "albob:green_concrete_wall",
+    "albob:red_concrete_wall",
+    "albob:black_concrete_wall"
+  ]
+}

@@ -16,5 +16,6 @@ internal object ALBOBDataGenerator : DataGeneratorEntrypoint {
         pack.addProvider(::LanguageProvider)
         pack.addProvider(::BlockLootTableProvider)
         pack.addProvider(::BlockTagProvider)
+        pack.addProvider(::ItemTagProvider)
 	}
 }
