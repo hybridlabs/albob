@@ -12,6 +12,7 @@ object ALBOBDataGenerator : DataGeneratorEntrypoint {
         logger.info("Initializing ${ALBOB.MOD_NAME} (Data)")
 
         val pack = generator.createPack()
-        // pack.addProvider()
+        pack.addProvider(::ModelProvider)
+        pack.addProvider(::LanguageProvider)
 	}
 }

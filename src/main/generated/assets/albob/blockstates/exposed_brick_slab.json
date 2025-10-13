@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "albob:block/exposed_brick_slab"
+    },
+    "type=double": {
+      "model": "albob:block/exposed_brick"
+    },
+    "type=top": {
+      "model": "albob:block/exposed_brick_slab_top"
+    }
+  }
+}

@@ -1,5 +1,8 @@
 package dev.hybridlabs.albob
 
+import dev.hybridlabs.albob.block.ALBOBlocks
+import dev.hybridlabs.albob.item.ALBOBItemGroups
+import dev.hybridlabs.albob.item.ALBOBItems
 import net.fabricmc.api.ModInitializer
 import org.slf4j.LoggerFactory
 
@@ -9,7 +12,12 @@ object ALBOB : ModInitializer {
 
     private val logger = LoggerFactory.getLogger(MOD_ID)
 
-	override fun onInitialize() {
+	@Suppress("UnusedExpression")
+    override fun onInitialize() {
 		logger.info("Initializing $MOD_NAME")
+
+        ALBOBlocks
+        ALBOBItems
+        ALBOBItemGroups
 	}
 }

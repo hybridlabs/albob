@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "albob:block/exposed_brick",
+    "side": "albob:block/exposed_brick",
+    "top": "albob:block/exposed_brick"
+  }
+}

@@ -43,3 +43,8 @@ replay_*.log
 
 # kotlin
 .kotlin/
+
+# data
+
+src/main/generated/.cache
+src/main/generated/*/minecraft
