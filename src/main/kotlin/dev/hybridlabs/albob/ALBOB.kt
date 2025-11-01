@@ -1,6 +1,7 @@
 package dev.hybridlabs.albob
 
 import dev.hybridlabs.albob.block.ALBOBlocks
+import dev.hybridlabs.albob.block.entity.ALBOBlockEntityTypes
 import dev.hybridlabs.albob.item.ALBOBItemGroups
 import dev.hybridlabs.albob.item.ALBOBItems
 import net.fabricmc.api.ModInitializer
@@ -17,6 +18,7 @@ object ALBOB : ModInitializer {
     override fun onInitialize() {
 		logger.info("Initializing $MOD_NAME")
 
+        ALBOBlockEntityTypes
         ALBOBlocks
         ALBOBItems
         ALBOBItemGroups

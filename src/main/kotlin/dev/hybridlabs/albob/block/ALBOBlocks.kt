@@ -7,6 +7,7 @@ import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.SlabBlock
+import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.StairBlock
 import net.minecraft.world.level.block.WallBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
@@ -85,24 +86,82 @@ object ALBOBlocks {
     val BLACK_CONCRETE_STAIRS = registerStairs("black_concrete_stairs", Blocks.BLACK_CONCRETE)
     val BLACK_CONCRETE_SLAB = registerSlab("black_concrete_slab", Blocks.BLACK_CONCRETE)
 
+    val OIL_BARREL = register("oil_barrel", ::UprightBarrelBlock) {
+        it.mapColor(MapColor.METAL)
+            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+            .requiresCorrectToolForDrops()
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.METAL)
+    }
+
+    val WHITE_OIL_BARREL = registerParent("white_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.TERRACOTTA_WHITE) }
+    val ORANGE_OIL_BARREL = registerParent("orange_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_ORANGE) }
+    val MAGENTA_OIL_BARREL = registerParent("magenta_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_MAGENTA) }
+    val LIGHT_BLUE_OIL_BARREL = registerParent("light_blue_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_LIGHT_BLUE) }
+    val YELLOW_OIL_BARREL = registerParent("yellow_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_YELLOW) }
+    val LIME_OIL_BARREL = registerParent("lime_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_LIGHT_GREEN) }
+    val PINK_OIL_BARREL = registerParent("pink_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_PINK) }
+    val GRAY_OIL_BARREL = registerParent("gray_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_GRAY) }
+    val LIGHT_GRAY_OIL_BARREL = registerParent("light_gray_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_LIGHT_GRAY) }
+    val CYAN_OIL_BARREL = registerParent("cyan_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_CYAN) }
+    val PURPLE_OIL_BARREL = registerParent("purple_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_PURPLE) }
+    val BLUE_OIL_BARREL = registerParent("blue_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_BLUE) }
+    val BROWN_OIL_BARREL = registerParent("brown_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_BROWN) }
+    val GREEN_OIL_BARREL = registerParent("green_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_GREEN) }
+    val RED_OIL_BARREL = registerParent("red_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_RED) }
+    val BLACK_OIL_BARREL = registerParent("black_oil_barrel", OIL_BARREL, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_BLACK) }
+
+    val OIL_DRUM = register("oil_drum", ::UprightBarrelBlock) {
+        it.mapColor(MapColor.METAL)
+            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+            .requiresCorrectToolForDrops()
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.METAL)
+    }
+
+    val WHITE_OIL_DRUM = registerParent("white_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.TERRACOTTA_WHITE) }
+    val ORANGE_OIL_DRUM = registerParent("orange_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_ORANGE) }
+    val MAGENTA_OIL_DRUM = registerParent("magenta_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_MAGENTA) }
+    val LIGHT_BLUE_OIL_DRUM = registerParent("light_blue_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_LIGHT_BLUE) }
+    val YELLOW_OIL_DRUM = registerParent("yellow_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_YELLOW) }
+    val LIME_OIL_DRUM = registerParent("lime_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_LIGHT_GREEN) }
+    val PINK_OIL_DRUM = registerParent("pink_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_PINK) }
+    val GRAY_OIL_DRUM = registerParent("gray_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_GRAY) }
+    val LIGHT_GRAY_OIL_DRUM = registerParent("light_gray_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_LIGHT_GRAY) }
+    val CYAN_OIL_DRUM = registerParent("cyan_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_CYAN) }
+    val PURPLE_OIL_DRUM = registerParent("purple_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_PURPLE) }
+    val BLUE_OIL_DRUM = registerParent("blue_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_BLUE) }
+    val BROWN_OIL_DRUM = registerParent("brown_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_BROWN) }
+    val GREEN_OIL_DRUM = registerParent("green_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_GREEN) }
+    val RED_OIL_DRUM = registerParent("red_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_RED) }
+    val BLACK_OIL_DRUM = registerParent("black_oil_drum", OIL_DRUM, ::UprightBarrelBlock) { it.mapColor(MapColor.COLOR_BLACK) }
+
     private fun <T : Block> register(id: String, block: T): T {
         return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation(ALBOB.MOD_ID, id), block)
     }
 
     /* Basic */
 
-    private fun register(id: String, settings: UnaryOperator<BlockBehaviour.Properties>): Block {
-        return register(id, settings.apply(BlockBehaviour.Properties.of()))
+    private fun register(id: String, properties: UnaryOperator<BlockBehaviour.Properties>): Block {
+        return register(id, properties.apply(BlockBehaviour.Properties.of()))
     }
 
-    private fun register(id: String, settings: BlockBehaviour.Properties): Block {
-        return register(id, Block(settings))
+    private fun register(id: String, properties: BlockBehaviour.Properties): Block {
+        return register(id, Block(properties))
+    }
+
+    private fun <T : Block> register(id: String, block: Function<BlockBehaviour.Properties, T>, properties: UnaryOperator<BlockBehaviour.Properties>): T {
+        return register(id, block.apply(properties.apply(BlockBehaviour.Properties.of())))
     }
 
     /* Parented Blocks */
 
     private fun <T : Block> registerParent(id: String, parent: Block, factory: Function<BlockBehaviour.Properties, T>): T {
         return register(id, factory.apply(BlockBehaviour.Properties.copy(parent)))
+    }
+
+    private fun <T : Block> registerParent(id: String, parent: Block, factory: Function<BlockBehaviour.Properties, T>, properties: UnaryOperator<BlockBehaviour.Properties>): T {
+        return registerParent(id, parent) { factory.apply(properties.apply(it)) }
     }
 
     private fun registerWall(id: String, parent: Block): WallBlock {
