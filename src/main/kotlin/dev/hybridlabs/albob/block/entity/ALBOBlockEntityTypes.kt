@@ -11,25 +11,7 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 
 object ALBOBlockEntityTypes {
-    val UPRIGHT_BARREL = register("upright_barrel", BlockEntityType.Builder.of(::UprightBarrelBlockEntity,
-        ALBOBlocks.OIL_BARREL,
-        ALBOBlocks.WHITE_OIL_BARREL,
-        ALBOBlocks.ORANGE_OIL_BARREL,
-        ALBOBlocks.MAGENTA_OIL_BARREL,
-        ALBOBlocks.LIGHT_BLUE_OIL_BARREL,
-        ALBOBlocks.YELLOW_OIL_BARREL,
-        ALBOBlocks.LIME_OIL_BARREL,
-        ALBOBlocks.PINK_OIL_BARREL,
-        ALBOBlocks.GRAY_OIL_BARREL,
-        ALBOBlocks.LIGHT_GRAY_OIL_BARREL,
-        ALBOBlocks.CYAN_OIL_BARREL,
-        ALBOBlocks.PURPLE_OIL_BARREL,
-        ALBOBlocks.BLUE_OIL_BARREL,
-        ALBOBlocks.BROWN_OIL_BARREL,
-        ALBOBlocks.GREEN_OIL_BARREL,
-        ALBOBlocks.RED_OIL_BARREL,
-        ALBOBlocks.BLACK_OIL_BARREL,
-
+    val METAL_DRUM = register("metal_drum", BlockEntityType.Builder.of(::MetalDrumBlockEntity,
         ALBOBlocks.OIL_DRUM,
         ALBOBlocks.WHITE_OIL_DRUM,
         ALBOBlocks.ORANGE_OIL_DRUM,

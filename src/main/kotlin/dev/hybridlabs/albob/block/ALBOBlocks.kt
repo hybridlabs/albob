@@ -86,7 +86,7 @@ object ALBOBlocks {
     val BLACK_CONCRETE_STAIRS = registerStairs("black_concrete_stairs", Blocks.BLACK_CONCRETE)
     val BLACK_CONCRETE_SLAB = registerSlab("black_concrete_slab", Blocks.BLACK_CONCRETE)
 
-    val OIL_BARREL = register("oil_barrel", ::UprightBarrelBlock) {
+    val OIL_DRUM = register("oil_drum", ::MetalDrumBlock) {
         it.mapColor(MapColor.METAL)
             .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
             .requiresCorrectToolForDrops()
@@ -94,47 +94,22 @@ object ALBOBlocks {
             .sound(SoundType.METAL)
     }
 
-    val WHITE_OIL_BARREL = registerUprightBarrel("white_oil_barrel", OIL_BARREL, MapColor.TERRACOTTA_WHITE)
-    val ORANGE_OIL_BARREL = registerUprightBarrel("orange_oil_barrel", OIL_BARREL, MapColor.COLOR_ORANGE)
-    val MAGENTA_OIL_BARREL = registerUprightBarrel("magenta_oil_barrel", OIL_BARREL, MapColor.COLOR_MAGENTA)
-    val LIGHT_BLUE_OIL_BARREL = registerUprightBarrel("light_blue_oil_barrel", OIL_BARREL, MapColor.COLOR_LIGHT_BLUE)
-    val YELLOW_OIL_BARREL = registerUprightBarrel("yellow_oil_barrel", OIL_BARREL, MapColor.COLOR_YELLOW)
-    val LIME_OIL_BARREL = registerUprightBarrel("lime_oil_barrel", OIL_BARREL, MapColor.COLOR_LIGHT_GREEN)
-    val PINK_OIL_BARREL = registerUprightBarrel("pink_oil_barrel", OIL_BARREL, MapColor.COLOR_PINK)
-    val GRAY_OIL_BARREL = registerUprightBarrel("gray_oil_barrel", OIL_BARREL, MapColor.COLOR_GRAY)
-    val LIGHT_GRAY_OIL_BARREL = registerUprightBarrel("light_gray_oil_barrel", OIL_BARREL, MapColor.COLOR_LIGHT_GRAY)
-    val CYAN_OIL_BARREL = registerUprightBarrel("cyan_oil_barrel", OIL_BARREL, MapColor.COLOR_CYAN)
-    val PURPLE_OIL_BARREL = registerUprightBarrel("purple_oil_barrel", OIL_BARREL, MapColor.COLOR_PURPLE)
-    val BLUE_OIL_BARREL = registerUprightBarrel("blue_oil_barrel", OIL_BARREL, MapColor.COLOR_BLUE)
-    val BROWN_OIL_BARREL = registerUprightBarrel("brown_oil_barrel", OIL_BARREL, MapColor.COLOR_BROWN)
-    val GREEN_OIL_BARREL = registerUprightBarrel("green_oil_barrel", OIL_BARREL, MapColor.COLOR_GREEN)
-    val RED_OIL_BARREL = registerUprightBarrel("red_oil_barrel", OIL_BARREL, MapColor.COLOR_RED)
-    val BLACK_OIL_BARREL = registerUprightBarrel("black_oil_barrel", OIL_BARREL, MapColor.COLOR_BLACK)
-
-    val OIL_DRUM = register("oil_drum", ::UprightBarrelBlock) {
-        it.mapColor(MapColor.METAL)
-            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
-            .requiresCorrectToolForDrops()
-            .strength(5.0F, 6.0F)
-            .sound(SoundType.METAL)
-    }
-
-    val WHITE_OIL_DRUM = registerUprightBarrel("white_oil_drum", OIL_DRUM, MapColor.TERRACOTTA_WHITE)
-    val ORANGE_OIL_DRUM = registerUprightBarrel("orange_oil_drum", OIL_DRUM, MapColor.COLOR_ORANGE)
-    val MAGENTA_OIL_DRUM = registerUprightBarrel("magenta_oil_drum", OIL_DRUM, MapColor.COLOR_MAGENTA)
-    val LIGHT_BLUE_OIL_DRUM = registerUprightBarrel("light_blue_oil_drum", OIL_DRUM, MapColor.COLOR_LIGHT_BLUE)
-    val YELLOW_OIL_DRUM = registerUprightBarrel("yellow_oil_drum", OIL_DRUM, MapColor.COLOR_YELLOW)
-    val LIME_OIL_DRUM = registerUprightBarrel("lime_oil_drum", OIL_DRUM, MapColor.COLOR_LIGHT_GREEN)
-    val PINK_OIL_DRUM = registerUprightBarrel("pink_oil_drum", OIL_DRUM, MapColor.COLOR_PINK)
-    val GRAY_OIL_DRUM = registerUprightBarrel("gray_oil_drum", OIL_DRUM, MapColor.COLOR_GRAY)
-    val LIGHT_GRAY_OIL_DRUM = registerUprightBarrel("light_gray_oil_drum", OIL_DRUM, MapColor.COLOR_LIGHT_GRAY)
-    val CYAN_OIL_DRUM = registerUprightBarrel("cyan_oil_drum", OIL_DRUM, MapColor.COLOR_CYAN)
-    val PURPLE_OIL_DRUM = registerUprightBarrel("purple_oil_drum", OIL_DRUM, MapColor.COLOR_PURPLE)
-    val BLUE_OIL_DRUM = registerUprightBarrel("blue_oil_drum", OIL_DRUM, MapColor.COLOR_BLUE)
-    val BROWN_OIL_DRUM = registerUprightBarrel("brown_oil_drum", OIL_DRUM, MapColor.COLOR_BROWN)
-    val GREEN_OIL_DRUM = registerUprightBarrel("green_oil_drum", OIL_DRUM, MapColor.COLOR_GREEN)
-    val RED_OIL_DRUM = registerUprightBarrel("red_oil_drum", OIL_DRUM, MapColor.COLOR_RED)
-    val BLACK_OIL_DRUM = registerUprightBarrel("black_oil_drum", OIL_DRUM, MapColor.COLOR_BLACK)
+    val WHITE_OIL_DRUM = registerMetalDrum("white_oil_drum", OIL_DRUM, MapColor.TERRACOTTA_WHITE)
+    val ORANGE_OIL_DRUM = registerMetalDrum("orange_oil_drum", OIL_DRUM, MapColor.COLOR_ORANGE)
+    val MAGENTA_OIL_DRUM = registerMetalDrum("magenta_oil_drum", OIL_DRUM, MapColor.COLOR_MAGENTA)
+    val LIGHT_BLUE_OIL_DRUM = registerMetalDrum("light_blue_oil_drum", OIL_DRUM, MapColor.COLOR_LIGHT_BLUE)
+    val YELLOW_OIL_DRUM = registerMetalDrum("yellow_oil_drum", OIL_DRUM, MapColor.COLOR_YELLOW)
+    val LIME_OIL_DRUM = registerMetalDrum("lime_oil_drum", OIL_DRUM, MapColor.COLOR_LIGHT_GREEN)
+    val PINK_OIL_DRUM = registerMetalDrum("pink_oil_drum", OIL_DRUM, MapColor.COLOR_PINK)
+    val GRAY_OIL_DRUM = registerMetalDrum("gray_oil_drum", OIL_DRUM, MapColor.COLOR_GRAY)
+    val LIGHT_GRAY_OIL_DRUM = registerMetalDrum("light_gray_oil_drum", OIL_DRUM, MapColor.COLOR_LIGHT_GRAY)
+    val CYAN_OIL_DRUM = registerMetalDrum("cyan_oil_drum", OIL_DRUM, MapColor.COLOR_CYAN)
+    val PURPLE_OIL_DRUM = registerMetalDrum("purple_oil_drum", OIL_DRUM, MapColor.COLOR_PURPLE)
+    val BLUE_OIL_DRUM = registerMetalDrum("blue_oil_drum", OIL_DRUM, MapColor.COLOR_BLUE)
+    val BROWN_OIL_DRUM = registerMetalDrum("brown_oil_drum", OIL_DRUM, MapColor.COLOR_BROWN)
+    val GREEN_OIL_DRUM = registerMetalDrum("green_oil_drum", OIL_DRUM, MapColor.COLOR_GREEN)
+    val RED_OIL_DRUM = registerMetalDrum("red_oil_drum", OIL_DRUM, MapColor.COLOR_RED)
+    val BLACK_OIL_DRUM = registerMetalDrum("black_oil_drum", OIL_DRUM, MapColor.COLOR_BLACK)
 
     private fun <T : Block> register(id: String, block: T): T {
         return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation(ALBOB.MOD_ID, id), block)
@@ -176,7 +151,7 @@ object ALBOBlocks {
         return registerParent(id, parent, ::SlabBlock)
     }
 
-    private fun registerUprightBarrel(id: String, parent: Block, color: MapColor): UprightBarrelBlock {
-        return registerParent(id, parent, ::UprightBarrelBlock) { it.mapColor(color) }
+    private fun registerMetalDrum(id: String, parent: Block, color: MapColor): MetalDrumBlock {
+        return registerParent(id, parent, ::MetalDrumBlock) { it.mapColor(color) }
     }
 }

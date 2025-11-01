@@ -1,6 +1,7 @@
 package dev.hybridlabs.albob.block.entity
 
-import dev.hybridlabs.albob.block.UprightBarrelBlock
+import dev.hybridlabs.albob.ALBOB
+import dev.hybridlabs.albob.block.MetalDrumBlock
 import net.minecraft.core.BlockPos
 import net.minecraft.core.NonNullList
 import net.minecraft.nbt.CompoundTag
@@ -21,7 +22,7 @@ import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
 
-class UprightBarrelBlockEntity(pos: BlockPos, state: BlockState) : RandomizableContainerBlockEntity(ALBOBlockEntityTypes.UPRIGHT_BARREL, pos, state) {
+class MetalDrumBlockEntity(pos: BlockPos, state: BlockState) : RandomizableContainerBlockEntity(ALBOBlockEntityTypes.METAL_DRUM, pos, state) {
     private var inventory: NonNullList<ItemStack> = NonNullList.withSize(containerSize, ItemStack.EMPTY)
 
     val openersCounter = object : ContainerOpenersCounter() {
@@ -42,7 +43,7 @@ class UprightBarrelBlockEntity(pos: BlockPos, state: BlockState) : RandomizableC
             val menu = player.containerMenu
             return if (menu is ChestMenu) {
                 val container = menu.container
-                container == this@UprightBarrelBlockEntity
+                container == this@MetalDrumBlockEntity
             } else {
                 false
             }
@@ -79,7 +80,7 @@ class UprightBarrelBlockEntity(pos: BlockPos, state: BlockState) : RandomizableC
     }
 
     override fun getDefaultName(): Component {
-        return Component.translatable("container.barrel")
+        return Component.translatable("${ALBOB.MOD_ID}.container.drum")
     }
 
     override fun createMenu(id: Int, inventory: Inventory): AbstractContainerMenu {
@@ -111,7 +112,7 @@ class UprightBarrelBlockEntity(pos: BlockPos, state: BlockState) : RandomizableC
     }
 
     fun updateBlockState(state: BlockState, open: Boolean) {
-        level?.setBlock(blockPos, state.setValue(UprightBarrelBlock.OPEN, open), Block.UPDATE_NEIGHBORS.or(Block.UPDATE_CLIENTS))
+        level?.setBlock(blockPos, state.setValue(MetalDrumBlock.OPEN, open), Block.UPDATE_NEIGHBORS.or(Block.UPDATE_CLIENTS))
     }
 
     fun playSound(soundEvent: SoundEvent) {

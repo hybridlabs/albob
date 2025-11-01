@@ -2,7 +2,7 @@
 
 package dev.hybridlabs.albob.block
 
-import dev.hybridlabs.albob.block.entity.UprightBarrelBlockEntity
+import dev.hybridlabs.albob.block.entity.MetalDrumBlockEntity
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
@@ -32,7 +32,7 @@ import net.minecraft.world.level.material.FluidState
 import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.BlockHitResult
 
-class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings), SimpleWaterloggedBlock {
+class MetalDrumBlock(settings: Properties) : BaseEntityBlock(settings), SimpleWaterloggedBlock {
     init {
         registerDefaultState(
             stateDefinition.any()
@@ -43,7 +43,7 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings), Simp
 
     override fun tick(state: BlockState, level: ServerLevel, pos: BlockPos, random: RandomSource) {
         val blockEntity = level.getBlockEntity(pos)
-        if (blockEntity is UprightBarrelBlockEntity) {
+        if (blockEntity is MetalDrumBlockEntity) {
             blockEntity.recheckOpen()
         }
     }
@@ -53,7 +53,7 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings), Simp
             InteractionResult.SUCCESS
         } else {
             val blockEntity = level.getBlockEntity(pos)
-            if (blockEntity is UprightBarrelBlockEntity) {
+            if (blockEntity is MetalDrumBlockEntity) {
                 player.openMenu(blockEntity)
                 // player.awardStat(Stats.OPEN_BARREL) // TODO
                 PiglinAi.angerNearbyPiglins(player, true)
@@ -80,7 +80,7 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings), Simp
     override fun setPlacedBy(level: Level, pos: BlockPos, state: BlockState, entity: LivingEntity?, stack: ItemStack) {
         if (stack.hasCustomHoverName()) {
             val blockEntity = level.getBlockEntity(pos)
-            if (blockEntity is UprightBarrelBlockEntity) {
+            if (blockEntity is MetalDrumBlockEntity) {
                 blockEntity.customName = stack.hoverName
             }
         }
@@ -123,7 +123,7 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings), Simp
     }
 
     override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity {
-        return UprightBarrelBlockEntity(pos, state)
+        return MetalDrumBlockEntity(pos, state)
     }
 
     companion object {
