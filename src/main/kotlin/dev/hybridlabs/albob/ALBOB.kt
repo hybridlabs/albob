@@ -4,7 +4,7 @@ import dev.hybridlabs.albob.block.ALBOBlocks
 import dev.hybridlabs.albob.item.ALBOBItemGroups
 import dev.hybridlabs.albob.item.ALBOBItems
 import net.fabricmc.api.ModInitializer
-import net.minecraft.registry.Registry
+import net.minecraft.core.Registry
 import org.slf4j.LoggerFactory
 
 object ALBOB : ModInitializer {
@@ -22,10 +22,10 @@ object ALBOB : ModInitializer {
         ALBOBItemGroups
 	}
 
-    fun <T> Registry<T>.filterAlbobMod(): List<T> {
+    fun <T : Any?> Registry<T>.filterAlbobMod(): List<T> {
         return filter { obj ->
-            val identifier = getId(obj)
-            identifier?.namespace == MOD_ID
+            val location = getKey(obj)
+            location?.namespace == MOD_ID
         }
     }
 }

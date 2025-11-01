@@ -1,22 +1,22 @@
 package dev.hybridlabs.albob.block
 
 import dev.hybridlabs.albob.ALBOB
-import net.minecraft.block.AbstractBlock
-import net.minecraft.block.Block
-import net.minecraft.block.Blocks
-import net.minecraft.block.MapColor
-import net.minecraft.block.SlabBlock
-import net.minecraft.block.StairsBlock
-import net.minecraft.block.WallBlock
-import net.minecraft.block.enums.Instrument
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
-import net.minecraft.util.Identifier
+import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.SlabBlock
+import net.minecraft.world.level.block.StairBlock
+import net.minecraft.world.level.block.WallBlock
+import net.minecraft.world.level.block.state.BlockBehaviour
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument
+import net.minecraft.world.level.material.MapColor
 import java.util.function.Function
 import java.util.function.UnaryOperator
 
 object ALBOBlocks {
-    val EXPOSED_BRICK = register("exposed_brick") { it.mapColor(MapColor.RED).instrument(Instrument.BASEDRUM).requiresTool().strength(2.0F, 6.0F) }
+    val EXPOSED_BRICK = register("exposed_brick") { it.mapColor(MapColor.COLOR_RED).instrument(NoteBlockInstrument.BASEDRUM).requiresCorrectToolForDrops().strength(2.0F, 6.0F) }
     val EXPOSED_BRICK_WALL = registerWall("exposed_brick_wall", EXPOSED_BRICK)
     val EXPOSED_BRICK_STAIRS = registerStairs("exposed_brick_stairs", EXPOSED_BRICK)
     val EXPOSED_BRICK_SLAB = registerSlab("exposed_brick_slab", EXPOSED_BRICK)
@@ -86,31 +86,31 @@ object ALBOBlocks {
     val BLACK_CONCRETE_SLAB = registerSlab("black_concrete_slab", Blocks.BLACK_CONCRETE)
 
     private fun <T : Block> register(id: String, block: T): T {
-        return Registry.register(Registries.BLOCK, Identifier.of(ALBOB.MOD_ID, id), block)
+        return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation(ALBOB.MOD_ID, id), block)
     }
 
     /* Basic */
 
-    private fun register(id: String, settings: UnaryOperator<AbstractBlock.Settings>): Block {
-        return register(id, settings.apply(AbstractBlock.Settings.create()))
+    private fun register(id: String, settings: UnaryOperator<BlockBehaviour.Properties>): Block {
+        return register(id, settings.apply(BlockBehaviour.Properties.of()))
     }
 
-    private fun register(id: String, settings: AbstractBlock.Settings): Block {
+    private fun register(id: String, settings: BlockBehaviour.Properties): Block {
         return register(id, Block(settings))
     }
 
     /* Parented Blocks */
 
-    private fun <T : Block> registerParent(id: String, parent: Block, factory: Function<AbstractBlock.Settings, T>): T {
-        return register(id, factory.apply(AbstractBlock.Settings.copy(parent)))
+    private fun <T : Block> registerParent(id: String, parent: Block, factory: Function<BlockBehaviour.Properties, T>): T {
+        return register(id, factory.apply(BlockBehaviour.Properties.copy(parent)))
     }
 
     private fun registerWall(id: String, parent: Block): WallBlock {
         return registerParent(id, parent, ::WallBlock)
     }
 
-    private fun registerStairs(id: String, parent: Block): StairsBlock {
-        return registerParent(id, parent) { StairsBlock(parent.defaultState, it) }
+    private fun registerStairs(id: String, parent: Block): StairBlock {
+        return registerParent(id, parent) { StairBlock(parent.defaultBlockState(), it) }
     }
 
     private fun registerSlab(id: String, parent: Block): SlabBlock {

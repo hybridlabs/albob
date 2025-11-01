@@ -10,7 +10,6 @@ val maven_group: String by properties
 val mod_id: String by properties
 val mod_version: String by properties
 val minecraft_version: String by properties
-val yarn_build: String by properties
 val loader_version: String by properties
 val fabric_version: String by properties
 val kotlin_version: String by properties
@@ -50,7 +49,7 @@ fabricApi {
 
 dependencies {
 	minecraft("com.mojang:minecraft:$minecraft_version")
-	mappings("net.fabricmc:yarn:$minecraft_version+build.$yarn_build:v2")
+	mappings(loom.officialMojangMappings())
 	modImplementation("net.fabricmc:fabric-loader:$loader_version")
 
 	modImplementation("net.fabricmc.fabric-api:fabric-api:$fabric_version")

@@ -1,9 +1,9 @@
 package dev.hybridlabs.albob.data.family
 
 import dev.hybridlabs.albob.block.ALBOBlocks
-import net.minecraft.block.Block
-import net.minecraft.block.Blocks
-import net.minecraft.data.family.BlockFamily
+import net.minecraft.data.BlockFamily
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 
 object ALBOBlockFamilies {
     private val REGISTRY: MutableMap<Block, BlockFamily> = mutableMapOf()
@@ -117,7 +117,7 @@ object ALBOBlockFamilies {
 
     private fun register(block: Block, factory: (BlockFamily.Builder) -> Unit): BlockFamily {
         val builder = BlockFamily.Builder(block).apply(factory)
-        val family = builder.build()
+        val family = builder.family
         REGISTRY[block] = family
         return family
     }

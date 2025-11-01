@@ -2,12 +2,12 @@ package dev.hybridlabs.albob.item
 
 import dev.hybridlabs.albob.ALBOB
 import dev.hybridlabs.albob.block.ALBOBlocks
-import net.minecraft.block.Block
-import net.minecraft.item.BlockItem
-import net.minecraft.item.Item
-import net.minecraft.registry.Registries
-import net.minecraft.registry.Registry
-import net.minecraft.util.Identifier
+import net.minecraft.core.Registry
+import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.BlockItem
+import net.minecraft.world.item.Item
+import net.minecraft.world.level.block.Block
 
 object ALBOBItems {
     val EXPOSED_BRICK = register("exposed_brick", ALBOBlocks.EXPOSED_BRICK)
@@ -67,10 +67,10 @@ object ALBOBItems {
     val BLACK_CONCRETE_SLAB = register("black_concrete_slab", ALBOBlocks.BLACK_CONCRETE_SLAB)
 
     private fun register(id: String, block: Block): BlockItem {
-        return register(id, BlockItem(block, Item.Settings()))
+        return register(id, BlockItem(block, Item.Properties()))
     }
 
     private fun <T : Item> register(id: String, item: T): T {
-        return Registry.register(Registries.ITEM, Identifier.of(ALBOB.MOD_ID, id), item)
+        return Registry.register(BuiltInRegistries.ITEM, ResourceLocation(ALBOB.MOD_ID, id), item)
     }
 }

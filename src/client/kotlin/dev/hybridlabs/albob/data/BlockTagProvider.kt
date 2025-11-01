@@ -4,17 +4,17 @@ import dev.hybridlabs.albob.ALBOB.filterAlbobMod
 import dev.hybridlabs.albob.block.ALBOBlocks
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
-import net.minecraft.block.SlabBlock
-import net.minecraft.block.StairsBlock
-import net.minecraft.block.WallBlock
-import net.minecraft.registry.Registries
-import net.minecraft.registry.RegistryWrapper.WrapperLookup
-import net.minecraft.registry.tag.BlockTags
+import net.minecraft.core.HolderLookup
+import net.minecraft.core.registries.BuiltInRegistries
+import net.minecraft.tags.BlockTags
+import net.minecraft.world.level.block.SlabBlock
+import net.minecraft.world.level.block.StairBlock
+import net.minecraft.world.level.block.WallBlock
 import java.util.concurrent.CompletableFuture
 
-class BlockTagProvider(output: FabricDataOutput, future: CompletableFuture<WrapperLookup>) : FabricTagProvider.BlockTagProvider(output, future) {
-    override fun configure(lookup: WrapperLookup) {
-        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE).let { builder ->
+class BlockTagProvider(output: FabricDataOutput, future: CompletableFuture<HolderLookup.Provider>) : FabricTagProvider.BlockTagProvider(output, future) {
+    override fun addTags(lookup: HolderLookup.Provider) {
+        getOrCreateTagBuilder(BlockTags.MINEABLE_WITH_PICKAXE).let { builder ->
             builder.add(ALBOBlocks.EXPOSED_BRICK)
             builder.add(ALBOBlocks.EXPOSED_BRICK_WALL)
             builder.add(ALBOBlocks.EXPOSED_BRICK_STAIRS)
@@ -86,15 +86,15 @@ class BlockTagProvider(output: FabricDataOutput, future: CompletableFuture<Wrapp
         }
 
         getOrCreateTagBuilder(BlockTags.WALLS).let { builder ->
-            Registries.BLOCK.filterAlbobMod().filterIsInstance<WallBlock>().forEach(builder::add)
+            BuiltInRegistries.BLOCK.filterAlbobMod().filterIsInstance<WallBlock>().forEach(builder::add)
         }
 
         getOrCreateTagBuilder(BlockTags.STAIRS).let { builder ->
-            Registries.BLOCK.filterAlbobMod().filterIsInstance<StairsBlock>().forEach(builder::add)
+            BuiltInRegistries.BLOCK.filterAlbobMod().filterIsInstance<StairBlock>().forEach(builder::add)
         }
 
         getOrCreateTagBuilder(BlockTags.SLABS).let { builder ->
-            Registries.BLOCK.filterAlbobMod().filterIsInstance<SlabBlock>().forEach(builder::add)
+            BuiltInRegistries.BLOCK.filterAlbobMod().filterIsInstance<SlabBlock>().forEach(builder::add)
         }
     }
 }
