@@ -4,6 +4,7 @@ package dev.hybridlabs.albob.block
 
 import dev.hybridlabs.albob.block.entity.UprightBarrelBlockEntity
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.RandomSource
 import net.minecraft.world.Container
@@ -15,22 +16,28 @@ import net.minecraft.world.entity.monster.piglin.PiglinAi
 import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.item.ItemStack
+import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.Level
+import net.minecraft.world.level.LevelAccessor
 import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.RenderShape
+import net.minecraft.world.level.block.SimpleWaterloggedBlock
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.BooleanProperty
+import net.minecraft.world.level.material.FluidState
+import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.BlockHitResult
 
-class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings) {
+class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings), SimpleWaterloggedBlock {
     init {
         registerDefaultState(
             stateDefinition.any()
                 .setValue(OPEN, false)
+                .setValue(WATERLOGGED, false)
         )
     }
 
@@ -54,6 +61,20 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings) {
 
             InteractionResult.CONSUME
         }
+    }
+
+    override fun updateShape(state: BlockState, direction: Direction, otherState: BlockState, level: LevelAccessor, pos: BlockPos, otherPos: BlockPos): BlockState {
+        if (state.getValue(WATERLOGGED)) {
+            level.scheduleTick(pos, Fluids.WATER, Fluids.WATER.getTickDelay(level))
+        }
+
+        return super.updateShape(state, direction, otherState, level, pos, otherPos)
+    }
+
+    override fun getStateForPlacement(context: BlockPlaceContext): BlockState? {
+        val level = context.level
+        val pos = context.clickedPos
+        return defaultBlockState().setValue(WATERLOGGED, level.isWaterAt(pos))
     }
 
     override fun setPlacedBy(level: Level, pos: BlockPos, state: BlockState, entity: LivingEntity?, stack: ItemStack) {
@@ -86,7 +107,15 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings) {
     }
 
     override fun createBlockStateDefinition(builder: StateDefinition.Builder<Block, BlockState>) {
-        builder.add(OPEN)
+        builder.add(OPEN, WATERLOGGED)
+    }
+
+    override fun getFluidState(state: BlockState): FluidState {
+        return if (state.getValue(WATERLOGGED)) {
+            Fluids.WATER.getSource(false)
+        } else {
+            super.getFluidState(state)
+        }
     }
 
     override fun getRenderShape(blockState: BlockState): RenderShape {
@@ -99,5 +128,6 @@ class UprightBarrelBlock(settings: Properties) : BaseEntityBlock(settings) {
 
     companion object {
         val OPEN: BooleanProperty = BlockStateProperties.OPEN
+        val WATERLOGGED: BooleanProperty = BlockStateProperties.WATERLOGGED
     }
 }
