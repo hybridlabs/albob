@@ -1,0 +1,6 @@
+{
+  "parent": "albob:block/template_metal_drum",
+  "textures": {
+    "texture": "albob:block/cyan_oil_drum"
+  }
+}

@@ -92,6 +92,7 @@ object ALBOBlocks {
             .requiresCorrectToolForDrops()
             .strength(5.0F, 6.0F)
             .sound(SoundType.METAL)
+            .noOcclusion()
     }
 
     val WHITE_OIL_DRUM = registerMetalDrum("white_oil_drum", OIL_DRUM, MapColor.TERRACOTTA_WHITE)
