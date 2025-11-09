@@ -10,6 +10,8 @@ internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvid
         builder.add("itemGroup.${ALBOB.MOD_ID}.blocks", ALBOB.MOD_NAME)
 
         registerBlocks(builder)
+
+        builder.add("${ALBOB.MOD_ID}.container.drum", "Drum")
     }
 
     private fun registerBlocks(builder: TranslationBuilder) {
