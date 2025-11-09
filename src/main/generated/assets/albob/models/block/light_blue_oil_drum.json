@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "albob:block/light_blue_oil_drum"
-  }
-}
