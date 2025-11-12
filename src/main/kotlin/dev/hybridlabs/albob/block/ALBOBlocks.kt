@@ -153,6 +153,6 @@ object ALBOBlocks {
     }
 
     private fun registerMetalDrum(id: String, parent: Block, color: MapColor): MetalDrumBlock {
-        return registerParent(id, parent, ::MetalDrumBlock) { it.mapColor(color) }
+        return registerParent(id, parent, ::MetalDrumBlock) { it.mapColor(color).noOcclusion() }
     }
 }
