@@ -21,10 +21,13 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
             .filter(BlockFamily::shouldGenerateModel)
             .forEach { family -> generator.family(family.baseBlock).generateFor(family) }
 
-
-
         fun createDrum(block: Block) {
             val location = TEMPLATE_OIL_DRUM.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
+            generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
+        }
+
+        fun createPallet(block: Block) {
+            val location = TEMPLATE_PALLET.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
             generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
         }
 
@@ -45,6 +48,8 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         createDrum(ALBOBlocks.GREEN_OIL_DRUM)
         createDrum(ALBOBlocks.RED_OIL_DRUM)
         createDrum(ALBOBlocks.BLACK_OIL_DRUM)
+
+        createPallet(ALBOBlocks.OAK_PALLET)
     }
 
     override fun generateItemModels(generator: ItemModelGenerators) {
@@ -52,6 +57,7 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
 
     companion object {
         val TEMPLATE_OIL_DRUM: ModelTemplate = create("block/template_metal_drum", TextureSlot.TEXTURE)
+        val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
 
         private fun create(id: String, vararg slots: TextureSlot): ModelTemplate {
             return ModelTemplate(Optional.of(ResourceLocation(ALBOB.MOD_ID, id)), Optional.empty(), *slots)

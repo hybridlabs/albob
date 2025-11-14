@@ -112,6 +112,8 @@ object ALBOBlocks {
     val RED_OIL_DRUM = registerMetalDrum("red_oil_drum", OIL_DRUM, MapColor.COLOR_RED)
     val BLACK_OIL_DRUM = registerMetalDrum("black_oil_drum", OIL_DRUM, MapColor.COLOR_BLACK)
 
+    val OAK_PALLET = registerMetalDrum("oak_pallet", OIL_DRUM, MapColor.COLOR_BLACK)
+
     private fun <T : Block> register(id: String, block: T): T {
         return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation(ALBOB.MOD_ID, id), block)
     }
@@ -154,5 +156,9 @@ object ALBOBlocks {
 
     private fun registerMetalDrum(id: String, parent: Block, color: MapColor): MetalDrumBlock {
         return registerParent(id, parent, ::MetalDrumBlock) { it.mapColor(color).noOcclusion() }
+    }
+
+    private fun registerPallet(id: String, parent: Block, color: MapColor): PalletBlock {
+        return registerParent(id, parent, ::PalletBlock) { it.mapColor(color).noOcclusion() }
     }
 }
