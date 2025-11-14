@@ -89,7 +89,6 @@ object ALBOBlocks {
     val OIL_DRUM = register("oil_drum", ::MetalDrumBlock) {
         it.mapColor(MapColor.METAL)
             .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
-            .requiresCorrectToolForDrops()
             .strength(5.0F, 6.0F)
             .sound(SoundType.METAL)
             .noOcclusion()
@@ -112,7 +111,40 @@ object ALBOBlocks {
     val RED_OIL_DRUM = registerMetalDrum("red_oil_drum", OIL_DRUM, MapColor.COLOR_RED)
     val BLACK_OIL_DRUM = registerMetalDrum("black_oil_drum", OIL_DRUM, MapColor.COLOR_BLACK)
 
-    val OAK_PALLET = registerMetalDrum("oak_pallet", OIL_DRUM, MapColor.COLOR_BLACK)
+    val WOOD_PALLET = register("wood_pallet", ::PalletBlock) {
+        it.mapColor(MapColor.METAL)
+            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+            .strength(5.0F, 6.0F)
+            .sound(SoundType.WOOD)
+            .noOcclusion()
+    }
+
+    val OAK_PALLET = registerPallet("oak_pallet", WOOD_PALLET, MapColor.WOOD)
+
+    val FOOD_BOWL = register("food_bowl", ::PalletBlock) {
+        it.mapColor(MapColor.CLAY)
+            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+            .strength(1.0F, 2.0F)
+            .sound(SoundType.BONE_BLOCK)
+            .noOcclusion()
+    }
+
+    val WHITE_FOOD_BOWL = registerFoodBowl("white_food_bowl", FOOD_BOWL, MapColor.TERRACOTTA_WHITE)
+    val ORANGE_FOOD_BOWL = registerFoodBowl("orange_food_bowl", FOOD_BOWL, MapColor.COLOR_ORANGE)
+    val MAGENTA_FOOD_BOWL = registerFoodBowl("magenta_food_bowl", FOOD_BOWL, MapColor.COLOR_MAGENTA)
+    val LIGHT_BLUE_FOOD_BOWL = registerFoodBowl("light_blue_food_bowl", FOOD_BOWL, MapColor.COLOR_LIGHT_BLUE)
+    val YELLOW_FOOD_BOWL = registerFoodBowl("yellow_food_bowl", FOOD_BOWL, MapColor.COLOR_YELLOW)
+    val LIME_FOOD_BOWL = registerFoodBowl("lime_food_bowl", FOOD_BOWL, MapColor.COLOR_LIGHT_GREEN)
+    val PINK_FOOD_BOWL = registerFoodBowl("pink_food_bowl", FOOD_BOWL, MapColor.COLOR_PINK)
+    val GRAY_FOOD_BOWL = registerFoodBowl("gray_food_bowl", FOOD_BOWL, MapColor.COLOR_GRAY)
+    val LIGHT_GRAY_FOOD_BOWL = registerFoodBowl("light_gray_food_bowl", FOOD_BOWL, MapColor.COLOR_LIGHT_GRAY)
+    val CYAN_FOOD_BOWL = registerFoodBowl("cyan_food_bowl", FOOD_BOWL, MapColor.COLOR_CYAN)
+    val PURPLE_FOOD_BOWL = registerFoodBowl("purple_food_bowl", FOOD_BOWL, MapColor.COLOR_PURPLE)
+    val BLUE_FOOD_BOWL = registerFoodBowl("blue_food_bowl", FOOD_BOWL, MapColor.COLOR_BLUE)
+    val BROWN_FOOD_BOWL = registerFoodBowl("brown_food_bowl", FOOD_BOWL, MapColor.COLOR_BROWN)
+    val GREEN_FOOD_BOWL = registerFoodBowl("green_food_bowl", FOOD_BOWL, MapColor.COLOR_GREEN)
+    val RED_FOOD_BOWL = registerFoodBowl("red_food_bowl", FOOD_BOWL, MapColor.COLOR_RED)
+    val BLACK_FOOD_BOWL = registerFoodBowl("black_food_bowl", FOOD_BOWL, MapColor.COLOR_BLACK)
 
     private fun <T : Block> register(id: String, block: T): T {
         return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation(ALBOB.MOD_ID, id), block)
@@ -160,5 +192,9 @@ object ALBOBlocks {
 
     private fun registerPallet(id: String, parent: Block, color: MapColor): PalletBlock {
         return registerParent(id, parent, ::PalletBlock) { it.mapColor(color).noOcclusion() }
+    }
+
+    private fun registerFoodBowl(id: String, parent: Block, color: MapColor): FoodBowlBlock {
+        return registerParent(id, parent, ::FoodBowlBlock) { it.mapColor(color).noOcclusion() }
     }
 }

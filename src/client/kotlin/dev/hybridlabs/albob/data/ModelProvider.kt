@@ -31,6 +31,11 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
             generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
         }
 
+        fun createFoodBowl(block: Block) {
+            val location = TEMPLATE_FOOD_BOWL.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
+            generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
+        }
+
         createDrum(ALBOBlocks.OIL_DRUM)
         createDrum(ALBOBlocks.WHITE_OIL_DRUM)
         createDrum(ALBOBlocks.ORANGE_OIL_DRUM)
@@ -50,6 +55,24 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         createDrum(ALBOBlocks.BLACK_OIL_DRUM)
 
         createPallet(ALBOBlocks.OAK_PALLET)
+
+        createFoodBowl(ALBOBlocks.FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.WHITE_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.ORANGE_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.MAGENTA_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.LIGHT_BLUE_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.YELLOW_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.LIME_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.PINK_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.GRAY_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.LIGHT_GRAY_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.CYAN_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.PURPLE_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.BLUE_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.BROWN_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.GREEN_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.RED_FOOD_BOWL)
+        createFoodBowl(ALBOBlocks.BLACK_FOOD_BOWL)
     }
 
     override fun generateItemModels(generator: ItemModelGenerators) {
@@ -58,6 +81,7 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
     companion object {
         val TEMPLATE_OIL_DRUM: ModelTemplate = create("block/template_metal_drum", TextureSlot.TEXTURE)
         val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
+        val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE)
 
         private fun create(id: String, vararg slots: TextureSlot): ModelTemplate {
             return ModelTemplate(Optional.of(ResourceLocation(ALBOB.MOD_ID, id)), Optional.empty(), *slots)

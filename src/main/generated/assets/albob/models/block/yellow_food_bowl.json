@@ -1,0 +1,6 @@
+{
+  "parent": "albob:block/template_food_bowl",
+  "textures": {
+    "texture": "albob:block/yellow_food_bowl"
+  }
+}

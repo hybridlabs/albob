@@ -101,5 +101,23 @@ internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvid
         builder.add(ALBOBlocks.GREEN_OIL_DRUM, "Green Oil Drum")
         builder.add(ALBOBlocks.RED_OIL_DRUM, "Red Oil Drum")
         builder.add(ALBOBlocks.BLACK_OIL_DRUM, "Black Oil Drum")
+
+        builder.add(ALBOBlocks.FOOD_BOWL, "Food Bowl")
+        builder.add(ALBOBlocks.WHITE_FOOD_BOWL, "White Food Bowl")
+        builder.add(ALBOBlocks.ORANGE_FOOD_BOWL, "Orange Food Bowl")
+        builder.add(ALBOBlocks.MAGENTA_FOOD_BOWL, "Magenta Food Bowl")
+        builder.add(ALBOBlocks.LIGHT_BLUE_FOOD_BOWL, "Light Blue Food Bowl")
+        builder.add(ALBOBlocks.YELLOW_FOOD_BOWL, "Yellow Food Bowl")
+        builder.add(ALBOBlocks.LIME_FOOD_BOWL, "Lime Food Bowl")
+        builder.add(ALBOBlocks.PINK_FOOD_BOWL, "Pink Food Bowl")
+        builder.add(ALBOBlocks.GRAY_FOOD_BOWL, "Gray Food Bowl")
+        builder.add(ALBOBlocks.LIGHT_GRAY_FOOD_BOWL, "Light Gray Food Bowl")
+        builder.add(ALBOBlocks.CYAN_FOOD_BOWL, "Cyan Food Bowl")
+        builder.add(ALBOBlocks.PURPLE_FOOD_BOWL, "Purple Food Bowl")
+        builder.add(ALBOBlocks.BLUE_FOOD_BOWL, "Blue Food Bowl")
+        builder.add(ALBOBlocks.BROWN_FOOD_BOWL, "Brown Food Bowl")
+        builder.add(ALBOBlocks.GREEN_FOOD_BOWL, "Green Food Bowl")
+        builder.add(ALBOBlocks.RED_FOOD_BOWL, "Red Food Bowl")
+        builder.add(ALBOBlocks.BLACK_FOOD_BOWL, "Black Food Bowl")
     }
 }

@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty
 import net.minecraft.world.level.material.FluidState
 import net.minecraft.world.level.material.Fluids
 
-class PalletBlock(settings: Properties) : Block(settings), SimpleWaterloggedBlock {
+class FoodBowlBlock(settings: Properties) : Block(settings), SimpleWaterloggedBlock {
     init {
         registerDefaultState(
             stateDefinition.any()
