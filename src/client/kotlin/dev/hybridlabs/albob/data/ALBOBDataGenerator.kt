@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory
 internal object ALBOBDataGenerator : DataGeneratorEntrypoint {
     private val logger = LoggerFactory.getLogger("${ALBOB.MOD_ID}-data")
 
-	override fun onInitializeDataGenerator(generator: FabricDataGenerator) {
+    override fun onInitializeDataGenerator(generator: FabricDataGenerator) {
         logger.info("Initializing ${ALBOB.MOD_NAME} (Data)")
 
         val pack = generator.createPack()
@@ -17,5 +17,5 @@ internal object ALBOBDataGenerator : DataGeneratorEntrypoint {
         pack.addProvider(::BlockLootTableProvider)
         pack.addProvider(::BlockTagProvider)
         pack.addProvider(::ItemTagProvider)
-	}
+    }
 }

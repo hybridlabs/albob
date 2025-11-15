@@ -1,51 +1,51 @@
 {
-	"schemaVersion": 1,
-	"id": "albob",
-	"version": "${version}",
-	"name": "A Little Bit Of Blocks",
-	"description": "This is an example description! Tell everyone what your mod is about!",
-	"authors": [
-		"Hybrid Labs"
-	],
-	"contact": {
-		"homepage": "https://hybridlabs.dev/albob",
-		"sources": "https://github.com/hybridlabs/albob",
-		"issues": "https://github.com/hybridlabs/albob/issues"
-	},
-	"license": "ARR",
-	"icon": "assets/albob/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			{
-				"value": "dev.hybridlabs.albob.ALBOB",
-				"adapter": "kotlin"
-			}
-		],
-		"client": [
-			{
-				"value": "dev.hybridlabs.albob.client.ALBOBClient",
-				"adapter": "kotlin"
-			}
-		],
-		"fabric-datagen": [
-			{
-				"value": "dev.hybridlabs.albob.data.ALBOBDataGenerator",
-				"adapter": "kotlin"
-			}
-		]
-	},
-	"mixins": [
-		"albob.mixins.json",
-		{
-			"config": "albob.client.mixins.json",
-			"environment": "client"
-		}
-	],
+    "schemaVersion": 1,
+    "id": "albob",
+    "version": "${version}",
+    "name": "A Little Bit Of Blocks",
+    "description": "This is an example description! Tell everyone what your mod is about!",
+    "authors": [
+        "Hybrid Labs"
+    ],
+    "contact": {
+        "homepage": "https://hybridlabs.dev/albob",
+        "sources": "https://github.com/hybridlabs/albob",
+        "issues": "https://github.com/hybridlabs/albob/issues"
+    },
+    "license": "ARR",
+    "icon": "assets/albob/icon.png",
+    "environment": "*",
+    "entrypoints": {
+        "main": [
+            {
+                "value": "dev.hybridlabs.albob.ALBOB",
+                "adapter": "kotlin"
+            }
+        ],
+        "client": [
+            {
+                "value": "dev.hybridlabs.albob.client.ALBOBClient",
+                "adapter": "kotlin"
+            }
+        ],
+        "fabric-datagen": [
+            {
+                "value": "dev.hybridlabs.albob.data.ALBOBDataGenerator",
+                "adapter": "kotlin"
+            }
+        ]
+    },
+    "mixins": [
+        "albob.mixins.json",
+        {
+            "config": "albob.client.mixins.json",
+            "environment": "client"
+        }
+    ],
     "accessWidener": "albob.accesswidener",
-	"depends": {
-		"minecraft": "~1.20.1",
-		"fabric-api": "*",
-		"fabric-language-kotlin": "*"
-	}
+    "depends": {
+        "minecraft": "~1.20.1",
+        "fabric-api": "*",
+        "fabric-language-kotlin": "*"
+    }
 }
