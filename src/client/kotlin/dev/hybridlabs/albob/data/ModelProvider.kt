@@ -26,11 +26,6 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
             generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
         }
 
-        fun createPallet(block: Block) {
-            val location = TEMPLATE_PALLET.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
-            generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
-        }
-
         fun createFoodBowl(block: Block) {
             val location = TEMPLATE_FOOD_BOWL.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
             generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
@@ -53,8 +48,6 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         createDrum(ALBOBlocks.GREEN_OIL_DRUM)
         createDrum(ALBOBlocks.RED_OIL_DRUM)
         createDrum(ALBOBlocks.BLACK_OIL_DRUM)
-
-        createPallet(ALBOBlocks.OAK_PALLET)
 
         createFoodBowl(ALBOBlocks.FOOD_BOWL)
         createFoodBowl(ALBOBlocks.WHITE_FOOD_BOWL)

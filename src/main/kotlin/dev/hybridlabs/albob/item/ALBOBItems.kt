@@ -84,6 +84,24 @@ object ALBOBItems {
     val RED_OIL_DRUM = register("red_oil_drum", ALBOBlocks.RED_OIL_DRUM)
     val BLACK_OIL_DRUM = register("black_oil_drum", ALBOBlocks.BLACK_OIL_DRUM)
 
+    val FOOD_BOWL = register("food_bowl", ALBOBlocks.FOOD_BOWL)
+    val WHITE_FOOD_BOWL = register("white_food_bowl", ALBOBlocks.WHITE_FOOD_BOWL)
+    val ORANGE_FOOD_BOWL = register("orange_food_bowl", ALBOBlocks.ORANGE_FOOD_BOWL)
+    val MAGENTA_FOOD_BOWL = register("magenta_food_bowl", ALBOBlocks.MAGENTA_FOOD_BOWL)
+    val LIGHT_BLUE_FOOD_BOWL = register("light_blue_food_bowl", ALBOBlocks.LIGHT_BLUE_FOOD_BOWL)
+    val YELLOW_FOOD_BOWL = register("yellow_food_bowl", ALBOBlocks.YELLOW_FOOD_BOWL)
+    val LIME_FOOD_BOWL = register("lime_food_bowl", ALBOBlocks.LIME_FOOD_BOWL)
+    val PINK_FOOD_BOWL = register("pink_food_bowl", ALBOBlocks.PINK_FOOD_BOWL)
+    val GRAY_FOOD_BOWL = register("gray_food_bowl", ALBOBlocks.GRAY_FOOD_BOWL)
+    val LIGHT_GRAY_FOOD_BOWL = register("light_gray_food_bowl", ALBOBlocks.LIGHT_GRAY_FOOD_BOWL)
+    val CYAN_FOOD_BOWL = register("cyan_food_bowl", ALBOBlocks.CYAN_FOOD_BOWL)
+    val PURPLE_FOOD_BOWL = register("purple_food_bowl", ALBOBlocks.PURPLE_FOOD_BOWL)
+    val BLUE_FOOD_BOWL = register("blue_food_bowl", ALBOBlocks.BLUE_FOOD_BOWL)
+    val BROWN_FOOD_BOWL = register("brown_food_bowl", ALBOBlocks.BROWN_FOOD_BOWL)
+    val GREEN_FOOD_BOWL = register("green_food_bowl", ALBOBlocks.GREEN_FOOD_BOWL)
+    val RED_FOOD_BOWL = register("red_food_bowl", ALBOBlocks.RED_FOOD_BOWL)
+    val BLACK_FOOD_BOWL = register("black_food_bowl", ALBOBlocks.BLACK_FOOD_BOWL)
+
     private fun register(id: String, block: Block): BlockItem {
         return register(id, BlockItem(block, Item.Properties()))
     }

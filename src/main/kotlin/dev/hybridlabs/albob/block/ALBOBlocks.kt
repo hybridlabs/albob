@@ -111,17 +111,7 @@ object ALBOBlocks {
     val RED_OIL_DRUM = registerMetalDrum("red_oil_drum", OIL_DRUM, MapColor.COLOR_RED)
     val BLACK_OIL_DRUM = registerMetalDrum("black_oil_drum", OIL_DRUM, MapColor.COLOR_BLACK)
 
-    val WOOD_PALLET = register("wood_pallet", ::PalletBlock) {
-        it.mapColor(MapColor.METAL)
-            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
-            .strength(5.0F, 6.0F)
-            .sound(SoundType.WOOD)
-            .noOcclusion()
-    }
-
-    val OAK_PALLET = registerPallet("oak_pallet", WOOD_PALLET, MapColor.WOOD)
-
-    val FOOD_BOWL = register("food_bowl", ::PalletBlock) {
+    val FOOD_BOWL = register("food_bowl", ::FoodBowlBlock) {
         it.mapColor(MapColor.CLAY)
             .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
             .strength(1.0F, 2.0F)
@@ -188,10 +178,6 @@ object ALBOBlocks {
 
     private fun registerMetalDrum(id: String, parent: Block, color: MapColor): MetalDrumBlock {
         return registerParent(id, parent, ::MetalDrumBlock) { it.mapColor(color).noOcclusion() }
-    }
-
-    private fun registerPallet(id: String, parent: Block, color: MapColor): PalletBlock {
-        return registerParent(id, parent, ::PalletBlock) { it.mapColor(color).noOcclusion() }
     }
 
     private fun registerFoodBowl(id: String, parent: Block, color: MapColor): FoodBowlBlock {

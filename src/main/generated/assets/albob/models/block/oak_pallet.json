@@ -1,6 +1,0 @@
-{
-  "parent": "albob:block/template_pallet",
-  "textures": {
-    "texture": "albob:block/oak_pallet"
-  }
-}
