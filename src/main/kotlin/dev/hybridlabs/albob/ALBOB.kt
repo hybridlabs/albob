@@ -14,15 +14,15 @@ object ALBOB : ModInitializer {
 
     private val logger = LoggerFactory.getLogger(MOD_ID)
 
-	@Suppress("UnusedExpression")
+    @Suppress("UnusedExpression")
     override fun onInitialize() {
-		logger.info("Initializing $MOD_NAME")
+        logger.info("Initializing $MOD_NAME")
 
         ALBOBlockEntityTypes
         ALBOBlocks
         ALBOBItems
         ALBOBItemGroups
-	}
+    }
 
     fun <T : Any?> Registry<T>.filterAlbobMod(): List<T> {
         return filter { obj ->

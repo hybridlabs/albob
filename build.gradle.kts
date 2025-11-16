@@ -1,9 +1,9 @@
 @file:Suppress("PropertyName")
 
 plugins {
-	id("fabric-loom")
-	id("maven-publish")
-	id("org.jetbrains.kotlin.jvm")
+    id("fabric-loom")
+    id("maven-publish")
+    id("org.jetbrains.kotlin.jvm")
 }
 
 val maven_group: String by properties
@@ -21,7 +21,7 @@ version = "$mod_version+$minecraft_version"
 group = maven_group
 
 base {
-	archivesName.set(mod_id)
+    archivesName.set(mod_id)
 }
 
 repositories {
@@ -31,30 +31,30 @@ repositories {
 
 loom {
     accessWidenerPath = file("src/main/resources/$mod_id.accesswidener")
-	splitEnvironmentSourceSets()
+    splitEnvironmentSourceSets()
 
-	mods {
-		create(mod_id) {
-			sourceSet(sourceSets["main"])
-			sourceSet(sourceSets["client"])
-		}
-	}
+    mods {
+        create(mod_id) {
+            sourceSet(sourceSets["main"])
+            sourceSet(sourceSets["client"])
+        }
+    }
 
 }
 
 fabricApi {
-	configureDataGeneration {
-		client = true
-	}
+    configureDataGeneration {
+        client = true
+    }
 }
 
 dependencies {
-	minecraft("com.mojang:minecraft:$minecraft_version")
-	mappings(loom.officialMojangMappings())
-	modImplementation("net.fabricmc:fabric-loader:$loader_version")
+    minecraft("com.mojang:minecraft:$minecraft_version")
+    mappings(loom.officialMojangMappings())
+    modImplementation("net.fabricmc:fabric-loader:$loader_version")
 
-	modImplementation("net.fabricmc.fabric-api:fabric-api:$fabric_version")
-	modImplementation("net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version+kotlin.$kotlin_version")
+    modImplementation("net.fabricmc.fabric-api:fabric-api:$fabric_version")
+    modImplementation("net.fabricmc:fabric-language-kotlin:$fabric_kotlin_version+kotlin.$kotlin_version")
 
     modImplementation("software.bernie.geckolib:geckolib-fabric-$minecraft_version:$geckolib_version")
     modRuntimeOnly("com.terraformersmc:modmenu:$mod_menu_version")

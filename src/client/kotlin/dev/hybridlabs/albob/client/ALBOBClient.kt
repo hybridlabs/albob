@@ -7,7 +7,7 @@ import org.slf4j.LoggerFactory
 object ALBOBClient : ClientModInitializer {
     private val logger = LoggerFactory.getLogger("${ALBOB.MOD_ID}-client")
 
-	override fun onInitializeClient() {
+    override fun onInitializeClient() {
         logger.info("Initializing ${ALBOB.MOD_NAME} (Client)")
-	}
+    }
 }
