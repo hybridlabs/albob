@@ -90,7 +90,7 @@ object ALBOBlocks {
         it.mapColor(MapColor.METAL)
             .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
             .strength(5.0F, 6.0F)
-            .sound(SoundType.METAL)
+            .sound(SoundType.LANTERN)
             .noOcclusion()
     }
 
