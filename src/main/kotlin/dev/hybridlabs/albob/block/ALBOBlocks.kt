@@ -136,6 +136,14 @@ object ALBOBlocks {
     val RED_FOOD_BOWL = registerFoodBowl("red_food_bowl", FOOD_BOWL, MapColor.COLOR_RED)
     val BLACK_FOOD_BOWL = registerFoodBowl("black_food_bowl", FOOD_BOWL, MapColor.COLOR_BLACK)
 
+    val TRAFFIC_CONE = register("traffic_cone", ::Block) {
+        it.mapColor(MapColor.COLOR_ORANGE)
+            .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
+            .instabreak()
+            .sound(SoundType.DECORATED_POT)
+            .noOcclusion()
+    }
+
     private fun <T : Block> register(id: String, block: T): T {
         return Registry.register(BuiltInRegistries.BLOCK, ResourceLocation(ALBOB.MOD_ID, id), block)
     }

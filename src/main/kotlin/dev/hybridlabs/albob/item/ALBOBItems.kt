@@ -102,6 +102,8 @@ object ALBOBItems {
     val RED_FOOD_BOWL = register("red_food_bowl", ALBOBlocks.RED_FOOD_BOWL)
     val BLACK_FOOD_BOWL = register("black_food_bowl", ALBOBlocks.BLACK_FOOD_BOWL)
 
+    val TRAFFIC_CONE = register("traffic_cone", ALBOBlocks.TRAFFIC_CONE)
+
     private fun register(id: String, block: Block): BlockItem {
         return register(id, BlockItem(block, Item.Properties()))
     }

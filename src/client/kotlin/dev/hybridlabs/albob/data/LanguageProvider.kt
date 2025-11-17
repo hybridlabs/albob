@@ -119,5 +119,7 @@ internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvid
         builder.add(ALBOBlocks.GREEN_FOOD_BOWL, "Green Food Bowl")
         builder.add(ALBOBlocks.RED_FOOD_BOWL, "Red Food Bowl")
         builder.add(ALBOBlocks.BLACK_FOOD_BOWL, "Black Food Bowl")
+
+        builder.add(ALBOBlocks.TRAFFIC_CONE, "Traffic Cone")
     }
 }
