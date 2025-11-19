@@ -1,4 +1,4 @@
-package dev.hybridlabs.albob.data
+package dev.hybridlabs.albob.data.server
 
 import dev.hybridlabs.albob.block.ALBOBlocks
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput

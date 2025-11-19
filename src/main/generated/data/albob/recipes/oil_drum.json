@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "oil_drum",
+  "key": {
+    "#": {
+      "item": "minecraft:iron_nugget"
+    },
+    "X": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "X#X",
+    "X X",
+    "X#X"
+  ],
+  "result": {
+    "item": "albob:oil_drum"
+  },
+  "show_notification": true
+}

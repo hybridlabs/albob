@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "food_bowl",
+  "ingredients": [
+    {
+      "item": "minecraft:red_dye"
+    },
+    [
+      {
+        "item": "albob:black_food_bowl"
+      },
+      {
+        "item": "albob:blue_food_bowl"
+      },
+      {
+        "item": "albob:brown_food_bowl"
+      },
+      {
+        "item": "albob:cyan_food_bowl"
+      },
+      {
+        "item": "albob:gray_food_bowl"
+      },
+      {
+        "item": "albob:green_food_bowl"
+      },
+      {
+        "item": "albob:light_blue_food_bowl"
+      },
+      {
+        "item": "albob:light_gray_food_bowl"
+      },
+      {
+        "item": "albob:lime_food_bowl"
+      },
+      {
+        "item": "albob:magenta_food_bowl"
+      },
+      {
+        "item": "albob:orange_food_bowl"
+      },
+      {
+        "item": "albob:pink_food_bowl"
+      },
+      {
+        "item": "albob:purple_food_bowl"
+      },
+      {
+        "item": "albob:red_food_bowl"
+      },
+      {
+        "item": "albob:yellow_food_bowl"
+      },
+      {
+        "item": "albob:white_food_bowl"
+      },
+      {
+        "item": "albob:food_bowl"
+      }
+    ]
+  ],
+  "result": {
+    "item": "albob:red_food_bowl"
+  }
+}

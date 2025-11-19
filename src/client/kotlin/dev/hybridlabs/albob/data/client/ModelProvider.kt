@@ -1,4 +1,4 @@
-package dev.hybridlabs.albob.data
+package dev.hybridlabs.albob.data.client
 
 import dev.hybridlabs.albob.ALBOB
 import dev.hybridlabs.albob.block.ALBOBlocks
