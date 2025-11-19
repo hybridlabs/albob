@@ -16,6 +16,16 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
     override fun buildRecipes(exporter: Consumer<FinishedRecipe>) {
         createOilDrumRecipes(exporter)
         createFoodBowlRecipes(exporter)
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ALBOBItems.TRAFFIC_CONE)
+            .define('#', Items.STICK)
+            .define('X', Items.ORANGE_CONCRETE)
+            .pattern(" X ")
+            .pattern(" # ")
+            .pattern("XXX")
+            .unlockedBy("has_stick", has(Items.STICK))
+            .unlockedBy("has_concrete", has(Items.ORANGE_CONCRETE))
+            .save(exporter)
     }
 
     fun colorBlockWithDye(exporter: Consumer<FinishedRecipe>, rootItem: Item, results: List<Item>, group: String) {
