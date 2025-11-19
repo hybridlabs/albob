@@ -49,10 +49,10 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         )
 
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ALBOBItems.FOOD_BOWL)
-            .define('X', Items.BRICKS)
+            .define('X', Items.BRICK)
             .pattern("X X")
             .pattern("XXX")
-            .unlockedBy("has_brick", has(Items.BRICKS))
+            .unlockedBy("has_brick", has(Items.BRICK))
             .group("food_bowl")
             .save(exporter)
 

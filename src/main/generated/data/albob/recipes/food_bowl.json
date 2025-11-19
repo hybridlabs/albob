@@ -4,7 +4,7 @@
   "group": "food_bowl",
   "key": {
     "X": {
-      "item": "minecraft:bricks"
+      "item": "minecraft:brick"
     }
   },
   "pattern": [
