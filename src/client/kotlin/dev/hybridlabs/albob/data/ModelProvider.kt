@@ -21,51 +21,43 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
             .filter(BlockFamily::shouldGenerateModel)
             .forEach { family -> generator.family(family.baseBlock).generateFor(family) }
 
-        fun createDrum(block: Block) {
-            val location = TEMPLATE_OIL_DRUM.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
-            generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
-        }
+        generator.create(ALBOBlocks.OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.WHITE_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.ORANGE_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.MAGENTA_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.LIGHT_BLUE_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.YELLOW_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.LIME_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.PINK_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.GRAY_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.LIGHT_GRAY_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.CYAN_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.PURPLE_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.BLUE_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.BROWN_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.GREEN_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.RED_OIL_DRUM, TEMPLATE_OIL_DRUM)
+        generator.create(ALBOBlocks.BLACK_OIL_DRUM, TEMPLATE_OIL_DRUM)
 
-        fun createFoodBowl(block: Block) {
-            val location = TEMPLATE_FOOD_BOWL.create(block, TextureMapping.defaultTexture(block), generator.modelOutput)
-            generator.blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
-        }
+        generator.create(ALBOBlocks.FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.WHITE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.ORANGE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.MAGENTA_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.LIGHT_BLUE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.YELLOW_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.LIME_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.PINK_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.GRAY_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.LIGHT_GRAY_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.CYAN_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.PURPLE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.BLUE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.BROWN_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.GREEN_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.RED_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.BLACK_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
 
-        createDrum(ALBOBlocks.OIL_DRUM)
-        createDrum(ALBOBlocks.WHITE_OIL_DRUM)
-        createDrum(ALBOBlocks.ORANGE_OIL_DRUM)
-        createDrum(ALBOBlocks.MAGENTA_OIL_DRUM)
-        createDrum(ALBOBlocks.LIGHT_BLUE_OIL_DRUM)
-        createDrum(ALBOBlocks.YELLOW_OIL_DRUM)
-        createDrum(ALBOBlocks.LIME_OIL_DRUM)
-        createDrum(ALBOBlocks.PINK_OIL_DRUM)
-        createDrum(ALBOBlocks.GRAY_OIL_DRUM)
-        createDrum(ALBOBlocks.LIGHT_GRAY_OIL_DRUM)
-        createDrum(ALBOBlocks.CYAN_OIL_DRUM)
-        createDrum(ALBOBlocks.PURPLE_OIL_DRUM)
-        createDrum(ALBOBlocks.BLUE_OIL_DRUM)
-        createDrum(ALBOBlocks.BROWN_OIL_DRUM)
-        createDrum(ALBOBlocks.GREEN_OIL_DRUM)
-        createDrum(ALBOBlocks.RED_OIL_DRUM)
-        createDrum(ALBOBlocks.BLACK_OIL_DRUM)
-
-        createFoodBowl(ALBOBlocks.FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.WHITE_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.ORANGE_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.MAGENTA_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.LIGHT_BLUE_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.YELLOW_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.LIME_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.PINK_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.GRAY_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.LIGHT_GRAY_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.CYAN_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.PURPLE_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.BLUE_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.BROWN_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.GREEN_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.RED_FOOD_BOWL)
-        createFoodBowl(ALBOBlocks.BLACK_FOOD_BOWL)
+        generator.create(ALBOBlocks.TRAFFIC_CONE, TEMPLATE_TRAFFIC_CONE)
     }
 
     override fun generateItemModels(generator: ItemModelGenerators) {
@@ -75,9 +67,15 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         val TEMPLATE_OIL_DRUM: ModelTemplate = create("block/template_metal_drum", TextureSlot.TEXTURE)
         val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
         val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE)
+        val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE)
 
         private fun create(id: String, vararg slots: TextureSlot): ModelTemplate {
             return ModelTemplate(Optional.of(ResourceLocation(ALBOB.MOD_ID, id)), Optional.empty(), *slots)
+        }
+
+        fun BlockModelGenerators.create(block: Block, template: ModelTemplate) {
+            val location = template.create(block, TextureMapping.defaultTexture(block), modelOutput)
+            blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
         }
     }
 }
