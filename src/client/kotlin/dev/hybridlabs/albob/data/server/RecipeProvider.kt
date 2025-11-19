@@ -14,6 +14,24 @@ import java.util.function.Consumer
 
 class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
     override fun buildRecipes(exporter: Consumer<FinishedRecipe>) {
+        createOilDrumRecipes(exporter)
+        createFoodBowlRecipes(exporter)
+    }
+
+    fun colorBlockWithDye(exporter: Consumer<FinishedRecipe>, rootItem: Item, results: List<Item>, group: String) {
+        ORDERED_DYE_LIST.forEachIndexed { index, dyeItem ->
+            val result = results.getOrNull(index) ?: throw IllegalArgumentException("No result provided for $dyeItem @ $index")
+            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result)
+                .requires(dyeItem)
+                .requires(Ingredient.of(*(results + rootItem).toTypedArray()))
+                .group(group)
+                .unlockedBy("has_needed_dye", has(dyeItem))
+                .unlockedBy("has_root_item", has(rootItem))
+                .save(exporter, "dye_" + getItemName(result))
+        }
+    }
+
+    private fun createOilDrumRecipes(exporter: Consumer<FinishedRecipe>) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ALBOBItems.OIL_DRUM)
             .define('#', Items.IRON_NUGGET)
             .define('X', Items.IRON_INGOT)
@@ -47,7 +65,9 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 ALBOBItems.WHITE_OIL_DRUM,
             ), "oil_drum"
         )
+    }
 
+    private fun createFoodBowlRecipes(exporter: Consumer<FinishedRecipe>) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ALBOBItems.FOOD_BOWL)
             .define('X', Items.BRICK)
             .pattern("X X")
@@ -78,19 +98,6 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
                 ALBOBItems.WHITE_FOOD_BOWL,
             ), "food_bowl"
         )
-    }
-
-    fun colorBlockWithDye(exporter: Consumer<FinishedRecipe>, rootItem: Item, results: List<Item>, group: String) {
-        ORDERED_DYE_LIST.forEachIndexed { index, dyeItem ->
-            val result = results.getOrNull(index) ?: throw IllegalArgumentException("No result provided for $dyeItem @ $index")
-            ShapelessRecipeBuilder.shapeless(RecipeCategory.BUILDING_BLOCKS, result)
-                .requires(dyeItem)
-                .requires(Ingredient.of(*(results + rootItem).toTypedArray()))
-                .group(group)
-                .unlockedBy("has_needed_dye", has(dyeItem))
-                .unlockedBy("has_root_item", has(rootItem))
-                .save(exporter, "dye_" + getItemName(result))
-        }
     }
 
     companion object {
