@@ -1,6 +1,9 @@
 {
   "parent": "albob:block/template_metal_drum",
   "textures": {
-    "texture": "albob:block/pink_oil_drum"
+    "band": "albob:block/pink_oil_drum_band",
+    "case": "albob:block/oil_drum_case",
+    "particle": "albob:block/pink_oil_drum_side",
+    "side": "albob:block/pink_oil_drum_side"
   }
 }

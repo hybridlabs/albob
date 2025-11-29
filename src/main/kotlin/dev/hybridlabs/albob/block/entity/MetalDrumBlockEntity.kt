@@ -80,7 +80,7 @@ class MetalDrumBlockEntity(pos: BlockPos, state: BlockState) : RandomizableConta
     }
 
     override fun getDefaultName(): Component {
-        return Component.translatable("${ALBOB.MOD_ID}.container.drum")
+        return Component.translatable("${ALBOB.MOD_ID}.container.metal_drum")
     }
 
     override fun createMenu(id: Int, inventory: Inventory): AbstractContainerMenu {
