@@ -1,6 +1,7 @@
 {
   "parent": "albob:block/template_traffic_cone",
   "textures": {
+    "particle": "albob:block/traffic_cone_particle",
     "texture": "albob:block/traffic_cone"
   }
 }

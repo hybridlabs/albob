@@ -57,7 +57,7 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         generator.create(ALBOBlocks.RED_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
         generator.create(ALBOBlocks.BLACK_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
 
-        generator.create(ALBOBlocks.TRAFFIC_CONE, TEMPLATE_TRAFFIC_CONE)
+        generator.create(ALBOBlocks.TRAFFIC_CONE, TEMPLATE_TRAFFIC_CONE, TextureMapping.getBlockTexture(ALBOBlocks.TRAFFIC_CONE, "_particle"))
     }
 
     override fun generateItemModels(generator: ItemModelGenerators) {
@@ -73,10 +73,10 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
 
         val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
         val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
-        val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE)
+        val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
 
-        val FOOD_BOWL_FOOD_TEXTURE = ResourceLocation(ALBOB.MOD_ID, "block/food_bowl_food")
-        val OIL_DRUM_CASE_TEXTURE = ResourceLocation(ALBOB.MOD_ID, "block/oil_drum_case")
+        val FOOD_BOWL_FOOD_TEXTURE: ResourceLocation = TextureMapping.getBlockTexture(ALBOBlocks.FOOD_BOWL, "_food")
+        val OIL_DRUM_CASE_TEXTURE: ResourceLocation = TextureMapping.getBlockTexture(ALBOBlocks.OIL_DRUM, "_case")
 
         private fun create(id: String, vararg slots: TextureSlot): ModelTemplate {
             return ModelTemplate(Optional.of(ResourceLocation(ALBOB.MOD_ID, id)), Optional.empty(), *slots)
