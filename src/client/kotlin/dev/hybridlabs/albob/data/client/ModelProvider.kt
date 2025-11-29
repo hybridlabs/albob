@@ -39,23 +39,23 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         generator.create(ALBOBlocks.RED_OIL_DRUM, TEMPLATE_OIL_DRUM)
         generator.create(ALBOBlocks.BLACK_OIL_DRUM, TEMPLATE_OIL_DRUM)
 
-        generator.create(ALBOBlocks.FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.WHITE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.ORANGE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.MAGENTA_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.LIGHT_BLUE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.YELLOW_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.LIME_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.PINK_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.GRAY_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.LIGHT_GRAY_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.CYAN_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.PURPLE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.BLUE_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.BROWN_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.GREEN_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.RED_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
-        generator.create(ALBOBlocks.BLACK_FOOD_BOWL, TEMPLATE_FOOD_BOWL)
+        generator.create(ALBOBlocks.FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.WHITE_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.ORANGE_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.MAGENTA_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.LIGHT_BLUE_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.YELLOW_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.LIME_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.PINK_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.GRAY_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.LIGHT_GRAY_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.CYAN_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.PURPLE_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.BLUE_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.BROWN_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.GREEN_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.RED_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
+        generator.create(ALBOBlocks.BLACK_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
 
         generator.create(ALBOBlocks.TRAFFIC_CONE, TEMPLATE_TRAFFIC_CONE)
     }
@@ -66,15 +66,21 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
     companion object {
         val TEMPLATE_OIL_DRUM: ModelTemplate = create("block/template_metal_drum", TextureSlot.TEXTURE)
         val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
-        val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE)
+        val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
         val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE)
+
+        val FOOD_BOWL_FOOD_TEXTURE = ResourceLocation(ALBOB.MOD_ID, "block/food_bowl_food")
 
         private fun create(id: String, vararg slots: TextureSlot): ModelTemplate {
             return ModelTemplate(Optional.of(ResourceLocation(ALBOB.MOD_ID, id)), Optional.empty(), *slots)
         }
 
-        fun BlockModelGenerators.create(block: Block, template: ModelTemplate) {
-            val location = template.create(block, TextureMapping.defaultTexture(block), modelOutput)
+        fun BlockModelGenerators.create(block: Block, template: ModelTemplate, particleLocation: ResourceLocation? = null) {
+            val location = template.create(block, TextureMapping.defaultTexture(block).also {
+                if (particleLocation != null) {
+                    it.put(TextureSlot.PARTICLE, particleLocation)
+                }
+            }, modelOutput)
             blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
         }
     }
