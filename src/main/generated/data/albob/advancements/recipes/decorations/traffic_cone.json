@@ -1,12 +1,12 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_concrete": {
+    "has_sand": {
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:orange_concrete"
+              "minecraft:sand"
             ]
           }
         ]
@@ -35,7 +35,7 @@
   "requirements": [
     [
       "has_stick",
-      "has_concrete",
+      "has_sand",
       "has_the_recipe"
     ]
   ],

@@ -7,6 +7,7 @@ import net.minecraft.data.recipes.FinishedRecipe
 import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.data.recipes.ShapelessRecipeBuilder
+import net.minecraft.tags.ItemTags
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
@@ -20,11 +21,12 @@ class RecipeProvider(output: FabricDataOutput) : FabricRecipeProvider(output) {
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, ALBOBItems.TRAFFIC_CONE)
             .define('#', Items.STICK)
             .define('X', Items.ORANGE_CONCRETE)
+            .define('S', ItemTags.SAND)
             .pattern(" X ")
             .pattern(" # ")
-            .pattern("XXX")
+            .pattern("XSX")
             .unlockedBy("has_stick", has(Items.STICK))
-            .unlockedBy("has_concrete", has(Items.ORANGE_CONCRETE))
+            .unlockedBy("has_sand", has(Items.SAND))
             .save(exporter)
     }
 
