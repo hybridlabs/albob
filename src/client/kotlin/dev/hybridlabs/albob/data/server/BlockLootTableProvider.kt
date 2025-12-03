@@ -92,5 +92,8 @@ internal class BlockLootTableProvider(output: FabricDataOutput) : FabricBlockLoo
         dropSelf(ALBOBlocks.GREEN_OIL_DRUM)
         dropSelf(ALBOBlocks.RED_OIL_DRUM)
         dropSelf(ALBOBlocks.BLACK_OIL_DRUM)
+
+        dropSelf(ALBOBlocks.TRAFFIC_CONE)
+        dropSelf(ALBOBlocks.PENDANT_LAMP)
     }
 }

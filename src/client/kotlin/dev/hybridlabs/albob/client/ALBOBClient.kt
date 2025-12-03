@@ -1,7 +1,10 @@
 package dev.hybridlabs.albob.client
 
 import dev.hybridlabs.albob.ALBOB
+import dev.hybridlabs.albob.block.ALBOBlocks
 import net.fabricmc.api.ClientModInitializer
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap
+import net.minecraft.client.renderer.RenderType
 import org.slf4j.LoggerFactory
 
 object ALBOBClient : ClientModInitializer {
@@ -9,5 +12,9 @@ object ALBOBClient : ClientModInitializer {
 
     override fun onInitializeClient() {
         logger.info("Initializing ${ALBOB.MOD_NAME} (Client)")
+
+        BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
+            ALBOBlocks.PENDANT_LAMP
+        )
     }
 }

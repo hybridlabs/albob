@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.WallBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument
 import net.minecraft.world.level.material.MapColor
+import net.minecraft.world.level.material.PushReaction
 import java.util.function.Function
 import java.util.function.UnaryOperator
 
@@ -142,6 +143,17 @@ object ALBOBlocks {
             .instabreak()
             .sound(SoundType.DECORATED_POT)
             .noOcclusion()
+    }
+
+    val PENDANT_LAMP = register("pendant_lamp", ::PendantLampBlock) {
+        it.mapColor(MapColor.METAL)
+            .forceSolidOn()
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.LANTERN)
+            .lightLevel { 15 }
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
     }
 
     private fun <T : Block> register(id: String, block: T): T {

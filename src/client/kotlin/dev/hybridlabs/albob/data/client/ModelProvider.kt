@@ -57,7 +57,8 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         generator.create(ALBOBlocks.RED_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
         generator.create(ALBOBlocks.BLACK_FOOD_BOWL, TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
 
-        generator.create(ALBOBlocks.TRAFFIC_CONE, TEMPLATE_TRAFFIC_CONE, TextureMapping.getBlockTexture(ALBOBlocks.TRAFFIC_CONE, "_particle"))
+        generator.createParticle(ALBOBlocks.TRAFFIC_CONE, TEMPLATE_TRAFFIC_CONE)
+        generator.createParticle(ALBOBlocks.PENDANT_LAMP, TEMPLATE_PENDANT_LAMP)
     }
 
     override fun generateItemModels(generator: ItemModelGenerators) {
@@ -74,6 +75,7 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
         val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
         val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
+        val TEMPLATE_PENDANT_LAMP: ModelTemplate = create("block/template_pendant_lamp", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
 
         val FOOD_BOWL_FOOD_TEXTURE: ResourceLocation = TextureMapping.getBlockTexture(ALBOBlocks.FOOD_BOWL, "_food")
         val OIL_DRUM_CASE_TEXTURE: ResourceLocation = TextureMapping.getBlockTexture(ALBOBlocks.OIL_DRUM, "_case")
@@ -91,6 +93,10 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
 
             val location = template.create(block, mapping, modelOutput)
             blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
+        }
+
+        fun BlockModelGenerators.createParticle(block: Block, template: ModelTemplate) {
+            create(block, template, TextureMapping.getBlockTexture(block, "_particle"))
         }
 
         fun TextureMapping.put(slot: TextureSlot, block: Block): TextureMapping {

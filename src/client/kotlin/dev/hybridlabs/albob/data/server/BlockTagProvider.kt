@@ -101,6 +101,8 @@ class BlockTagProvider(output: FabricDataOutput, future: CompletableFuture<Holde
             builder.add(ALBOBlocks.GREEN_OIL_DRUM)
             builder.add(ALBOBlocks.RED_OIL_DRUM)
             builder.add(ALBOBlocks.BLACK_OIL_DRUM)
+
+            builder.add(ALBOBlocks.PENDANT_LAMP)
         }
 
         getOrCreateTagBuilder(BlockTags.WALLS).let { builder ->
