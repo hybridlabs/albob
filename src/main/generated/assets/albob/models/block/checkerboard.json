@@ -1,0 +1,7 @@
+{
+  "parent": "albob:block/template_checkerboard",
+  "textures": {
+    "particle": "albob:block/checkerboard",
+    "texture": "albob:block/checkerboard"
+  }
+}

@@ -95,5 +95,11 @@ internal class BlockLootTableProvider(output: FabricDataOutput) : FabricBlockLoo
 
         dropSelf(ALBOBlocks.TRAFFIC_CONE)
         dropSelf(ALBOBlocks.PENDANT_LAMP)
+
+        dropSelf(ALBOBlocks.OAK_BIRDHOUSE)
+
+        dropSelf(ALBOBlocks.CHECKERBOARD)
+        dropSelf(ALBOBlocks.CHESSBOARD)
+        dropSelf(ALBOBlocks.WIRE_BASKET)
     }
 }

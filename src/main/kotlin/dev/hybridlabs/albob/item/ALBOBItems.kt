@@ -105,6 +105,12 @@ object ALBOBItems {
     val TRAFFIC_CONE = register("traffic_cone", ALBOBlocks.TRAFFIC_CONE)
     val PENDANT_LAMP = register("pendant_lamp", ALBOBlocks.PENDANT_LAMP)
 
+    val OAK_BIRDHOUSE = register("oak_birdhouse", ALBOBlocks.OAK_BIRDHOUSE)
+
+    val CHECKERBOARD = register("checkerboard", ALBOBlocks.CHECKERBOARD)
+    val CHESSBOARD = register("chessboard", ALBOBlocks.CHESSBOARD)
+    val WIRE_BASKET = register("wire_basket", ALBOBlocks.WIRE_BASKET)
+
     private fun register(id: String, block: Block): BlockItem {
         return register(id, BlockItem(block, Item.Properties()))
     }

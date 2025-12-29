@@ -14,7 +14,8 @@ object ALBOBClient : ClientModInitializer {
         logger.info("Initializing ${ALBOB.MOD_NAME} (Client)")
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
-            ALBOBlocks.PENDANT_LAMP
+            ALBOBlocks.PENDANT_LAMP,
+            ALBOBlocks.WIRE_BASKET,
         )
     }
 }

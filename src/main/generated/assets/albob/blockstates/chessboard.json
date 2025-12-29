@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "albob:block/chessboard",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "albob:block/chessboard"
+    },
+    "facing=south": {
+      "model": "albob:block/chessboard",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "albob:block/chessboard",
+      "y": 270
+    }
+  }
+}

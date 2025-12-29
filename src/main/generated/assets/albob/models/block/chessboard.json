@@ -1,0 +1,7 @@
+{
+  "parent": "albob:block/template_chessboard",
+  "textures": {
+    "particle": "albob:block/chessboard",
+    "texture": "albob:block/chessboard"
+  }
+}

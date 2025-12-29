@@ -1,0 +1,11 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "albob:block/wire_basket",
+      "y": 90
+    },
+    "axis=z": {
+      "model": "albob:block/wire_basket"
+    }
+  }
+}

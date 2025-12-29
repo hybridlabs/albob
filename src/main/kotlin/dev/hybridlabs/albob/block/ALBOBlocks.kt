@@ -4,6 +4,7 @@ import dev.hybridlabs.albob.ALBOB
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.item.DyeColor
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.SlabBlock
@@ -154,6 +155,36 @@ object ALBOBlocks {
             .lightLevel { 15 }
             .noOcclusion()
             .pushReaction(PushReaction.DESTROY)
+    }
+
+    val OAK_BIRDHOUSE = register("oak_birdhouse", ::BirdhouseBlock) {
+        it.mapColor(Blocks.OAK_PLANKS.defaultMapColor())
+            .forceSolidOn()
+            .instrument(NoteBlockInstrument.BASS)
+            .strength(0.5F)
+            .ignitedByLava()
+            .noOcclusion()
+            .sound(SoundType.WOOD)
+    }
+
+    val CHECKERBOARD = register("checkerboard", ::CheckerboardBlock) {
+        it.mapColor(DyeColor.RED)
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    }
+
+    val CHESSBOARD = register("chessboard", ::ChessboardBlock) {
+        it.mapColor(DyeColor.BLACK)
+            .forceSolidOn()
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    }
+
+    val WIRE_BASKET = register("wire_basket", ::WireBasketBlock) {
+        it.mapColor(MapColor.METAL)
+            .sound(SoundType.METAL)
+            .forceSolidOn()
+            .noOcclusion()
     }
 
     private fun <T : Block> register(id: String, block: T): T {

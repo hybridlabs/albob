@@ -122,5 +122,11 @@ internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvid
 
         builder.add(ALBOBlocks.TRAFFIC_CONE, "Traffic Cone")
         builder.add(ALBOBlocks.PENDANT_LAMP, "Pendant Lamp")
+
+        builder.add(ALBOBlocks.OAK_BIRDHOUSE, "Oak Birdhouse")
+
+        builder.add(ALBOBlocks.CHECKERBOARD, "Checkerboard")
+        builder.add(ALBOBlocks.CHESSBOARD, "Chessboard")
+        builder.add(ALBOBlocks.WIRE_BASKET, "Wire Basket")
     }
 }

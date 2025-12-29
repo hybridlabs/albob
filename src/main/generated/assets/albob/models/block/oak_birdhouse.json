@@ -1,0 +1,7 @@
+{
+  "parent": "albob:block/template_birdhouse",
+  "textures": {
+    "particle": "albob:block/oak_birdhouse",
+    "texture": "albob:block/oak_birdhouse"
+  }
+}

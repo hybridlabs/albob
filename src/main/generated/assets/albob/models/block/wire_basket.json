@@ -1,0 +1,7 @@
+{
+  "parent": "albob:block/template_wire_basket",
+  "textures": {
+    "particle": "albob:block/wire_basket",
+    "texture": "albob:block/wire_basket"
+  }
+}

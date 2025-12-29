@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "albob:block/oak_birdhouse",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "albob:block/oak_birdhouse"
+    },
+    "facing=south": {
+      "model": "albob:block/oak_birdhouse",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "albob:block/oak_birdhouse",
+      "y": 270
+    }
+  }
+}
