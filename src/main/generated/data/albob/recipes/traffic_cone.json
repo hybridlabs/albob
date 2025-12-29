@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "S": {
+      "tag": "minecraft:sand"
+    },
+    "X": {
+      "item": "minecraft:orange_concrete"
+    }
+  },
+  "pattern": [
+    " X ",
+    " # ",
+    "XSX"
+  ],
+  "result": {
+    "item": "albob:traffic_cone"
+  },
+  "show_notification": true
+}

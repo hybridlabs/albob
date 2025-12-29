@@ -1,6 +1,7 @@
 {
   "parent": "albob:block/template_food_bowl",
   "textures": {
+    "particle": "albob:block/food_bowl_food",
     "texture": "albob:block/pink_food_bowl"
   }
 }

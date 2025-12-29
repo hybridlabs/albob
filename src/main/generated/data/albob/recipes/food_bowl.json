@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "food_bowl",
+  "key": {
+    "X": {
+      "item": "minecraft:brick"
+    }
+  },
+  "pattern": [
+    "X X",
+    "XXX"
+  ],
+  "result": {
+    "item": "albob:food_bowl"
+  },
+  "show_notification": true
+}

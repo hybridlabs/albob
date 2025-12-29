@@ -17,6 +17,7 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.inventory.AbstractContainerMenu
 import net.minecraft.world.item.ItemStack
 import net.minecraft.world.item.context.BlockPlaceContext
+import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.LevelAccessor
 import net.minecraft.world.level.block.BaseEntityBlock
@@ -31,6 +32,8 @@ import net.minecraft.world.level.block.state.properties.BooleanProperty
 import net.minecraft.world.level.material.FluidState
 import net.minecraft.world.level.material.Fluids
 import net.minecraft.world.phys.BlockHitResult
+import net.minecraft.world.phys.shapes.CollisionContext
+import net.minecraft.world.phys.shapes.VoxelShape
 
 class MetalDrumBlock(settings: Properties) : BaseEntityBlock(settings), SimpleWaterloggedBlock {
     init {
@@ -118,6 +121,10 @@ class MetalDrumBlock(settings: Properties) : BaseEntityBlock(settings), SimpleWa
         }
     }
 
+    override fun getShape(state: BlockState, level: BlockGetter, pos: BlockPos, context: CollisionContext): VoxelShape {
+        return SHAPE
+    }
+
     override fun getRenderShape(blockState: BlockState): RenderShape {
         return RenderShape.MODEL
     }
@@ -129,5 +136,7 @@ class MetalDrumBlock(settings: Properties) : BaseEntityBlock(settings), SimpleWa
     companion object {
         val OPEN: BooleanProperty = BlockStateProperties.OPEN
         val WATERLOGGED: BooleanProperty = BlockStateProperties.WATERLOGGED
+
+        val SHAPE: VoxelShape = box(0.5, 0.0, 0.5, 15.5, 16.0, 15.5)
     }
 }

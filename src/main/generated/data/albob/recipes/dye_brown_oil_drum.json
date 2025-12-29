@@ -1,0 +1,66 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "oil_drum",
+  "ingredients": [
+    {
+      "item": "minecraft:brown_dye"
+    },
+    [
+      {
+        "item": "albob:black_oil_drum"
+      },
+      {
+        "item": "albob:blue_oil_drum"
+      },
+      {
+        "item": "albob:brown_oil_drum"
+      },
+      {
+        "item": "albob:cyan_oil_drum"
+      },
+      {
+        "item": "albob:gray_oil_drum"
+      },
+      {
+        "item": "albob:green_oil_drum"
+      },
+      {
+        "item": "albob:light_blue_oil_drum"
+      },
+      {
+        "item": "albob:light_gray_oil_drum"
+      },
+      {
+        "item": "albob:lime_oil_drum"
+      },
+      {
+        "item": "albob:magenta_oil_drum"
+      },
+      {
+        "item": "albob:orange_oil_drum"
+      },
+      {
+        "item": "albob:pink_oil_drum"
+      },
+      {
+        "item": "albob:purple_oil_drum"
+      },
+      {
+        "item": "albob:red_oil_drum"
+      },
+      {
+        "item": "albob:yellow_oil_drum"
+      },
+      {
+        "item": "albob:white_oil_drum"
+      },
+      {
+        "item": "albob:oil_drum"
+      }
+    ]
+  ],
+  "result": {
+    "item": "albob:brown_oil_drum"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "albob:block/template_pendant_lamp",
+  "textures": {
+    "particle": "albob:block/pendant_lamp_particle",
+    "texture": "albob:block/pendant_lamp"
+  }
+}

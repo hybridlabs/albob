@@ -13,6 +13,7 @@ import net.minecraft.world.level.block.WallBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument
 import net.minecraft.world.level.material.MapColor
+import net.minecraft.world.level.material.PushReaction
 import java.util.function.Function
 import java.util.function.UnaryOperator
 
@@ -136,12 +137,23 @@ object ALBOBlocks {
     val RED_FOOD_BOWL = registerFoodBowl("red_food_bowl", FOOD_BOWL, MapColor.COLOR_RED)
     val BLACK_FOOD_BOWL = registerFoodBowl("black_food_bowl", FOOD_BOWL, MapColor.COLOR_BLACK)
 
-    val TRAFFIC_CONE = register("traffic_cone", ::Block) {
+    val TRAFFIC_CONE = register("traffic_cone", ::TrafficConeBlock) {
         it.mapColor(MapColor.COLOR_ORANGE)
             .instrument(NoteBlockInstrument.IRON_XYLOPHONE)
             .instabreak()
             .sound(SoundType.DECORATED_POT)
             .noOcclusion()
+    }
+
+    val PENDANT_LAMP = register("pendant_lamp", ::PendantLampBlock) {
+        it.mapColor(MapColor.METAL)
+            .forceSolidOn()
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.LANTERN)
+            .lightLevel { 15 }
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
     }
 
     private fun <T : Block> register(id: String, block: T): T {

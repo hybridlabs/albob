@@ -1,5 +1,5 @@
 {
-  "albob.container.drum": "Drum",
+  "albob.container.metal_drum": "Metal Drum",
   "block.albob.black_concrete_slab": "Black Concrete Slab",
   "block.albob.black_concrete_stairs": "Black Concrete Stairs",
   "block.albob.black_concrete_wall": "Black Concrete Wall",
@@ -61,6 +61,7 @@
   "block.albob.orange_concrete_wall": "Orange Concrete Wall",
   "block.albob.orange_food_bowl": "Orange Food Bowl",
   "block.albob.orange_oil_drum": "Orange Oil Drum",
+  "block.albob.pendant_lamp": "Pendant Lamp",
   "block.albob.pink_concrete_slab": "Pink Concrete Slab",
   "block.albob.pink_concrete_stairs": "Pink Concrete Stairs",
   "block.albob.pink_concrete_wall": "Pink Concrete Wall",
@@ -76,6 +77,7 @@
   "block.albob.red_concrete_wall": "Red Concrete Wall",
   "block.albob.red_food_bowl": "Red Food Bowl",
   "block.albob.red_oil_drum": "Red Oil Drum",
+  "block.albob.traffic_cone": "Traffic Cone",
   "block.albob.white_concrete_slab": "White Concrete Slab",
   "block.albob.white_concrete_stairs": "White Concrete Stairs",
   "block.albob.white_concrete_wall": "White Concrete Wall",
