@@ -12,6 +12,7 @@ internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvid
         registerBlocks(builder)
 
         builder.add("${ALBOB.MOD_ID}.container.metal_drum", "Metal Drum")
+        builder.add("${ALBOB.MOD_ID}.container.wire_basket", "Wire Basket")
     }
 
     private fun registerBlocks(builder: TranslationBuilder) {

@@ -31,6 +31,10 @@ object ALBOBlockEntityTypes {
         ALBOBlocks.BLACK_OIL_DRUM,
     ))
 
+    val WIRE_BASKET = register("wire_basket", BlockEntityType.Builder.of(::WireBasketBlockEntity,
+        ALBOBlocks.WIRE_BASKET,
+    ))
+
     @Suppress("NULLABILITY_MISMATCH_BASED_ON_JAVA_ANNOTATIONS")
     private fun <T : BlockEntity> register(id: String, builder: BlockEntityType.Builder<T>): BlockEntityType<T> {
         val location = ResourceLocation(ALBOB.MOD_ID, id)
