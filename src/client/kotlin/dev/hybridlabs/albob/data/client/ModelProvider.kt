@@ -65,6 +65,8 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
 
         generator.createParticle(ALBOBlocks.TRAFFIC_CONE, ALBOBModelTemplates.TEMPLATE_TRAFFIC_CONE)
         generator.createParticle(ALBOBlocks.PENDANT_LAMP, ALBOBModelTemplates.TEMPLATE_PENDANT_LAMP)
+        generator.createParticle(ALBOBlocks.IRON_CHANDELIER, ALBOBModelTemplates.TEMPLATE_CHANDELIER)
+        generator.createParticle(ALBOBlocks.GOLDEN_CHANDELIER, ALBOBModelTemplates.TEMPLATE_CHANDELIER)
 
         ALBOBlocks.WIRE_BASKET.let { block ->
             val location = generator.createModel(block, ALBOBModelTemplates.TEMPLATE_WIRE_BASKET)
