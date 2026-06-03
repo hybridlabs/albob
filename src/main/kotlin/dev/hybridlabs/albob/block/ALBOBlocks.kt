@@ -157,6 +157,28 @@ object ALBOBlocks {
             .pushReaction(PushReaction.DESTROY)
     }
 
+    val GOLDEN_CHANDELIER = register("golden_chandelier", ::ChandelierBlock) {
+        it.mapColor(MapColor.METAL)
+            .forceSolidOn()
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.LANTERN)
+            .lightLevel { 15 }
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    }
+
+    val IRON_CHANDELIER = register("iron_chandelier", ::ChandelierBlock) {
+        it.mapColor(MapColor.METAL)
+            .forceSolidOn()
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.LANTERN)
+            .lightLevel { 15 }
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    }
+
     val OAK_BIRDHOUSE = register("oak_birdhouse", ::BirdhouseBlock) {
         it.mapColor(Blocks.OAK_PLANKS.defaultMapColor())
             .forceSolidOn()

@@ -1,0 +1,7 @@
+{
+  "parent": "albob:block/template_chandelier",
+  "textures": {
+    "particle": "albob:block/iron_chandelier_particle",
+    "texture": "albob:block/iron_chandelier"
+  }
+}

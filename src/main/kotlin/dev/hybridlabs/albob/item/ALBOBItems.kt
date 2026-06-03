@@ -104,6 +104,8 @@ object ALBOBItems {
 
     val TRAFFIC_CONE = register("traffic_cone", ALBOBlocks.TRAFFIC_CONE)
     val PENDANT_LAMP = register("pendant_lamp", ALBOBlocks.PENDANT_LAMP)
+    val IRON_CHANDELIER = register("iron_chandelier", ALBOBlocks.IRON_CHANDELIER)
+    val GOLDEN_CHANDELIER = register("golden_chandelier", ALBOBlocks.GOLDEN_CHANDELIER)
 
     val OAK_BIRDHOUSE = register("oak_birdhouse", ALBOBlocks.OAK_BIRDHOUSE)
 
