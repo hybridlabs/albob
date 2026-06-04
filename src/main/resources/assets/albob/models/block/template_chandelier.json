@@ -1,10 +1,12 @@
 {
-  "parent": "minecraft:block/block",
-  "elements": [
-    {
+	"format_version": "1.21.11",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/block",
+	"elements": [
+		{
 			"from": [8, 6, 6.5],
 			"to": [8, 16, 9.5],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 12.5, 8]},
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 12.5, 8]},
 			"faces": {
 				"north": {"uv": [0.75, 5.5, 0.75, 8], "texture": "#texture"},
 				"east": {"uv": [0, 5.5, 0.75, 8], "texture": "#texture"},
@@ -17,7 +19,7 @@
 		{
 			"from": [6.5, 6, 8],
 			"to": [9.5, 16, 8],
-			"rotation": {"angle": -45, "axis": "y", "origin": [8, 12.5, 8]},
+			"rotation": {"angle": 45, "axis": "y", "origin": [8, 12.5, 8]},
 			"faces": {
 				"north": {"uv": [4.5, 6, 5.25, 8.5], "texture": "#texture"},
 				"east": {"uv": [4.5, 6, 4.5, 8.5], "texture": "#texture"},
