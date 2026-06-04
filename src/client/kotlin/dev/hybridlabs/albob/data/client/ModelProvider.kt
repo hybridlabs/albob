@@ -67,14 +67,14 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         generator.createParticle(ALBOBlocks.PENDANT_LAMP, ALBOBModelTemplates.TEMPLATE_PENDANT_LAMP)
         generator.createParticle(ALBOBlocks.IRON_CHANDELIER, ALBOBModelTemplates.TEMPLATE_CHANDELIER)
         generator.createParticle(ALBOBlocks.GOLDEN_CHANDELIER, ALBOBModelTemplates.TEMPLATE_CHANDELIER)
-        generator.createParticle(ALBOBlocks.COPPER_WATERING_CAN, ALBOBModelTemplates.TEMPLATE_WATERING_CAN)
-        generator.createParticle(ALBOBlocks.IRON_WATERING_CAN, ALBOBModelTemplates.TEMPLATE_WATERING_CAN)
 
         ALBOBlocks.WIRE_BASKET.let { block ->
             val location = generator.createModel(block, ALBOBModelTemplates.TEMPLATE_WIRE_BASKET)
             generator.blockStateOutput.accept(createXZRotationVariant(block, location))
         }
 
+        generator.createBasicHorizontal(ALBOBlocks.COPPER_WATERING_CAN, ALBOBModelTemplates.TEMPLATE_WATERING_CAN)
+        generator.createBasicHorizontal(ALBOBlocks.IRON_WATERING_CAN, ALBOBModelTemplates.TEMPLATE_WATERING_CAN)
         generator.createBasicHorizontal(ALBOBlocks.OAK_BIRDHOUSE, ALBOBModelTemplates.TEMPLATE_BIRDHOUSE)
         generator.createBasicHorizontal(ALBOBlocks.CHECKERBOARD, ALBOBModelTemplates.TEMPLATE_CHECKERBOARD)
         generator.createBasicHorizontal(ALBOBlocks.CHESSBOARD, ALBOBModelTemplates.TEMPLATE_CHESSBOARD)

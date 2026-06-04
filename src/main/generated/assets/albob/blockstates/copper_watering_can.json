@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "albob:block/copper_watering_can",
+      "y": 90
+    },
+    "facing=north": {
       "model": "albob:block/copper_watering_can"
+    },
+    "facing=south": {
+      "model": "albob:block/copper_watering_can",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "albob:block/copper_watering_can",
+      "y": 270
     }
   }
 }

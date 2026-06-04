@@ -1,7 +1,7 @@
 {
   "parent": "albob:block/template_watering_can",
   "textures": {
-    "particle": "albob:block/iron_watering_can_particle",
+    "particle": "albob:block/iron_watering_can",
     "texture": "albob:block/iron_watering_can"
   }
 }
