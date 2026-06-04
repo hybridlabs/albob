@@ -15,6 +15,10 @@ object ALBOBClient : ClientModInitializer {
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
             ALBOBlocks.PENDANT_LAMP,
+            ALBOBlocks.GOLDEN_CHANDELIER,
+            ALBOBlocks.IRON_CHANDELIER,
+            ALBOBlocks.COPPER_WATERING_CAN,
+            ALBOBlocks.IRON_WATERING_CAN,
             ALBOBlocks.WIRE_BASKET,
         )
     }
