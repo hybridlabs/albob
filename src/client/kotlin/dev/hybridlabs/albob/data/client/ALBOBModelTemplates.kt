@@ -19,6 +19,7 @@ object ALBOBModelTemplates {
     val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_PENDANT_LAMP: ModelTemplate = create("block/template_pendant_lamp", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_CHANDELIER: ModelTemplate = create("block/template_chandelier", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
+    val TEMPLATE_WATERING_CAN: ModelTemplate = create("block/template_watering_can", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_BIRDHOUSE: ModelTemplate = create("block/template_birdhouse", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_CHECKERBOARD: ModelTemplate = create("block/template_checkerboard", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_CHESSBOARD: ModelTemplate = create("block/template_chessboard", TextureSlot.TEXTURE, TextureSlot.PARTICLE)

@@ -179,6 +179,26 @@ object ALBOBlocks {
             .pushReaction(PushReaction.DESTROY)
     }
 
+    val COPPER_WATERING_CAN = register("copper_watering_can", ::WateringCanBlock) {
+        it.mapColor(MapColor.METAL)
+            .forceSolidOn()
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.LANTERN)
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    }
+
+    val IRON_WATERING_CAN = register("iron_watering_can", ::WateringCanBlock) {
+        it.mapColor(MapColor.METAL)
+            .forceSolidOn()
+            .requiresCorrectToolForDrops()
+            .strength(3.5F)
+            .sound(SoundType.LANTERN)
+            .noOcclusion()
+            .pushReaction(PushReaction.DESTROY)
+    }
+
     val OAK_BIRDHOUSE = register("oak_birdhouse", ::BirdhouseBlock) {
         it.mapColor(Blocks.OAK_PLANKS.defaultMapColor())
             .forceSolidOn()

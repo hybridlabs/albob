@@ -125,6 +125,8 @@ internal class LanguageProvider(output: FabricDataOutput) : FabricLanguageProvid
         builder.add(ALBOBlocks.PENDANT_LAMP, "Pendant Lamp")
         builder.add(ALBOBlocks.IRON_CHANDELIER, "Iron Chandelier")
         builder.add(ALBOBlocks.GOLDEN_CHANDELIER, "Gold Chandelier")
+        builder.add(ALBOBlocks.COPPER_WATERING_CAN, "Copper Watering Can")
+        builder.add(ALBOBlocks.IRON_WATERING_CAN, "Iron Watering Can")
 
         builder.add(ALBOBlocks.OAK_BIRDHOUSE, "Oak Birdhouse")
 
