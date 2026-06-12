@@ -27,23 +27,23 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
             .filter(BlockFamily::shouldGenerateModel)
             .forEach { family -> generator.family(family.baseBlock).generateFor(family) }
 
-        generator.createOilDrum(ALBOBlocks.OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.WHITE_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.ORANGE_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.MAGENTA_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.LIGHT_BLUE_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.YELLOW_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.LIME_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.PINK_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.GRAY_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.LIGHT_GRAY_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.CYAN_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.PURPLE_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.BLUE_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.BROWN_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.GREEN_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.RED_OIL_DRUM)
-        generator.createOilDrum(ALBOBlocks.BLACK_OIL_DRUM)
+        generator.create(ALBOBlocks.OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.WHITE_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.ORANGE_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.MAGENTA_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.LIGHT_BLUE_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.YELLOW_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.LIME_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.PINK_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.GRAY_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.LIGHT_GRAY_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.CYAN_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.PURPLE_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.BLUE_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.BROWN_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.GREEN_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.RED_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
+        generator.create(ALBOBlocks.BLACK_OIL_DRUM, ALBOBModelTemplates.TEMPLATE_METAL_DRUM)
 
         generator.create(ALBOBlocks.FOOD_BOWL, ALBOBModelTemplates.TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
         generator.create(ALBOBlocks.WHITE_FOOD_BOWL, ALBOBModelTemplates.TEMPLATE_FOOD_BOWL, FOOD_BOWL_FOOD_TEXTURE)
@@ -85,7 +85,6 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
 
     companion object {
         val FOOD_BOWL_FOOD_TEXTURE: ResourceLocation = TextureMapping.getBlockTexture(ALBOBlocks.FOOD_BOWL, "_food")
-        val OIL_DRUM_CASE_TEXTURE: ResourceLocation = TextureMapping.getBlockTexture(ALBOBlocks.OIL_DRUM, "_case")
 
         fun createMapping(block: Block, particleLocation: ResourceLocation? = TextureMapping.getBlockTexture(block)): TextureMapping? {
             return TextureMapping.defaultTexture(block).also {
@@ -115,17 +114,6 @@ internal class ModelProvider(output: FabricDataOutput) : FabricModelProvider(out
         }
 
         /* Block Specific */
-
-        fun BlockModelGenerators.createOilDrum(block: Block) {
-            val mapping = TextureMapping()
-                .put(TextureSlot.SIDE, block)
-                .put(ALBOBTextureSlot.BAND, block)
-                .put(ALBOBTextureSlot.CASE, OIL_DRUM_CASE_TEXTURE)
-                .put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(block, "_${TextureSlot.SIDE.id}"))
-
-            val location = ALBOBModelTemplates.TEMPLATE_METAL_DRUM.create(block, mapping, modelOutput)
-            blockStateOutput.accept(BlockModelGenerators.createSimpleBlock(block, location))
-        }
 
         fun createXZRotationVariant(block: Block, location: ResourceLocation): BlockStateGenerator {
             return MultiVariantGenerator.multiVariant(block)

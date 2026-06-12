@@ -7,13 +7,7 @@ import net.minecraft.resources.ResourceLocation
 import java.util.Optional
 
 object ALBOBModelTemplates {
-    val TEMPLATE_METAL_DRUM: ModelTemplate = create("block/template_metal_drum",
-        TextureSlot.SIDE,
-        ALBOBTextureSlot.BAND,
-        ALBOBTextureSlot.CASE,
-        TextureSlot.PARTICLE
-    )
-
+    val TEMPLATE_METAL_DRUM: ModelTemplate = create("block/template_metal_drum", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_PALLET: ModelTemplate = create("block/template_pallet", TextureSlot.TEXTURE)
     val TEMPLATE_FOOD_BOWL: ModelTemplate = create("block/template_food_bowl", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
     val TEMPLATE_TRAFFIC_CONE: ModelTemplate = create("block/template_traffic_cone", TextureSlot.TEXTURE, TextureSlot.PARTICLE)
